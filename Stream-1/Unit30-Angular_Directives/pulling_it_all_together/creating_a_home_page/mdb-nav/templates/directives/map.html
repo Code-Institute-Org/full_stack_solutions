@@ -1,0 +1,12 @@
+<div class="map-container">
+	<img class="img-thumbnail img-responsive" src="https://maps.googleapis.com/maps/api/staticmap?center={{map.address}}&zoom={{map.zoom}}&size={{mapDimensions()}}&markers=color:red|{{map.address}}" />
+	<br />
+	<div class="zoom-controls">
+		<button class="zoom-button btn btn-primary" ng-click="zoomIn()">
+			<span class="glyphicon glyphicon-plus"></span>
+		</button>
+		<button class="zoom-button btn btn-primary" ng-click="zoomOut()">
+			<span class="glyphicon glyphicon-minus"></span>
+		</button>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+movie-nav .list-inline>li {padding: 10px 15px;}
+
+movie-nav .list-inline>li a {font-size: large;}
+
+movie-nav .list-inline > li > a:hover { background-color: lightgrey; text-decoration: none;}
+movie-nav .list-inline > li > a.active { background-color: #337AB7; color: white;}

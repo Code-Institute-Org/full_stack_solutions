@@ -1,0 +1,19 @@
+<div class="container">
+	<h1>{{title}}</h1>
+	<div class="row">
+		<div class="col-md-3">
+			<img src="http://image.tmdb.org/t/p/w370/{{movie.poster_path}}" class="img-responsive">
+		</div>
+
+		<div class="col-md-7">
+			<h1>{{movie.title}}</h1>
+			<p>Rating: {{movie.vote_average}} ({{movie.vote_count}})</p>
+			<p>{{movie.overview}}</p>
+			<h3>Tag Line</h3>
+			<p>{{movie.tagline}}</p>
+			<p>Released: {{movie.release_date | date: 'medium'}}</p>
+		</div>
+	</div>
+	<br /><br />
+	<a href="#/popular"><button class="btn btn-primary">Return Movies</button></a>
+</div>

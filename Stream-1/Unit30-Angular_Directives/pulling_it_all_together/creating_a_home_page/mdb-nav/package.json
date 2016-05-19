@@ -1,0 +1,16 @@
+{
+  "name": "movies-db-app",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A tutorial using the movies db api",
+  "repository": "https://github.com/lillylangtree/mdb-nav.git",
+  "license": "MIT",
+  "devDependencies": { 
+    "http-server": "^0.6.1",
+    "shelljs": "^0.2.6"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1"
+  }
+}

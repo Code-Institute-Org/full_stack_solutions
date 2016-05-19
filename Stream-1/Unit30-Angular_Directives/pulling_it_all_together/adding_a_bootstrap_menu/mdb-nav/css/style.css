@@ -1,0 +1,38 @@
+movie-nav .list-inline > li {
+	padding: 10px 15px;
+}
+
+movie-nav .list-inline > li a {
+	font-size: large;
+}
+
+movie-nav .list-inline > li > a:hover {
+	background-color: lightgrey;
+	text-decoration: none;
+}
+
+movie-nav .list-inline > li > a:active {
+	background-color: #337AB7;
+	color: white;
+}
+
+.map-container {
+	position: relative;
+}
+
+.zoom-controls {
+	position: absolute;
+	top: 1em;
+	left: 0.6em;
+}
+
+.zoom-button {
+	padding: 4px 8px;
+	opacity: 0.8;
+}
+
+select {
+	padding: 0.5em;
+	border-radius: 5px;
+	font-size: 1.4em;
+}

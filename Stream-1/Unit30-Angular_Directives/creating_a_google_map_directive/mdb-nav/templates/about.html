@@ -1,0 +1,14 @@
+<div class="container">
+	<h1>{{title}}</h1>
+
+	<div class="row">
+		<div class="col-md-4">
+			<h1>Our Locations</h1>
+			<select ng-model="map" ng-options="mapview.address for mapview in maps"></select>
+		</div>
+		<div class="col-md-4">
+			<h3>{{map.address}}</h3>
+			<make-map map="map"></make-map>
+		</div>
+	</div>
+</div>
