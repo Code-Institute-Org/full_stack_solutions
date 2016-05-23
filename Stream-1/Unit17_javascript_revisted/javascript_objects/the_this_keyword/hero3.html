@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var firstName = "Bruce";
+			var secondName = "Wayne";
+			var superman = {
+				firstName: "Clark",
+				secondName: "Kent",
+				title: "Superman",
+				isWearingSuit: false,
+				suitUp: function() {
+					if (this.isWearingSuit) {
+						return "I'm already my suit!"
+					} else {
+						this.isWearingSuit = true;
+						return "Looks like Metropolis is in trouble! Better suit up!"
+					}
+				},
+				getFullNameUsingThis: function() {
+					return "Using this: " + this.firstName + " " + this.secondName;
+				},
+				getFullNameWithoutUsingThis: function() {
+					return "Without using this: " + firstName + " " + secondName;
+				}
+			};
+
+			console.log(superman.suitUp());
+			console.log(superman.isWearingSuit);
+			console.log(superman.getFullNameUsingThis());
+			console.log(superman.getFullNameWithoutUsingThis());
+		</script>
+	</head>
+</html>

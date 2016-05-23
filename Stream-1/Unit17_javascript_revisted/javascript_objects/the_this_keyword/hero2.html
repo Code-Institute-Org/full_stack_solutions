@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var superman = {
+				firstName: "Clark",
+				secondName: "Kent",
+				title: "Superman",
+				isWearingSuit: false,
+				suitUp: function() {
+					if (this.isWearingSuit) {
+						return "I'm already my suit!"
+					} else {
+						this.isWearingSuit = true;
+						return "Looks like Metropolis is in trouble! Better suit up!"
+					}
+				},
+				getScope: function() {
+					return this;
+				}
+			};
+
+			console.log(this);
+			console.log(superman.getScope());
+			console.log(superman.suitUp());
+			console.log(superman.isWearingSuit);
+		</script>
+	</head>
+</html>
