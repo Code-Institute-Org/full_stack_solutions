@@ -1,0 +1,60 @@
+.container{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0px;
+}
+.theButton {
+  height: 80px;
+  width: 266px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #555;
+  color: #FFF;
+  font-family: dosis;
+  font-size: 30px;
+  padding-top: 30px;
+   border: solid 2px #fff;   /* border used to stop jump when border is applied*/
+}
+.superButton {
+  height: 80px;
+  width: 100%;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #555;
+  color: #FFF;
+  font-family: dosis;
+  font-size: 30px;
+  padding-top: 30px;
+   /* display: none;*/
+   border: solid 2px #fff;   /* border used to stop jump when border is applied*/
+}
+
+p{
+	font-family: dosis;
+	font-size: 20px;
+	margin-left: 10px;
+	width:240px;
+}
+.makeBlue{
+   background-color: #81BBC9;
+}
+
+.makeBorder{
+	border: solid 2px #000;
+}
+.green{
+  background-color: #008000;
+}
+.red{
+  background-color:   #FF0000;
+}
+.blue{
+  background-color:   #0000FF;
+}
+.selected{
+    background-color: #F07D00;
+}
+/*make sure to add after all other color classes to advoid cascade issues*/
+.makeBlack{
+   background-color:  #000000;
+} 

@@ -1,0 +1,57 @@
+  <!DOCTYPE html>
+<meta charset="utf-8">
+<title>Chart Colour Scale</title>
+<head>
+<style>
+body {
+  font: 16px sans-serif;
+}
+
+
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+     
+</body>
+<script>
+//creates svg width and height variables and spacing
+var svgWidth = 700,
+    svgHeight = 500;
+ 
+var spacing= 2;
+//creates array
+var myData = [ 10, 15, 20, 30, 45, 50, 40, 45 ,50 , 40 ];
+//sorts array values in a descending pattern
+myData.sort(d3.descending);
+
+//creates a scale for the height
+var heightScale = d3.scale.linear()
+                    .domain([0,d3.max(myData)])
+                    .range([0,svgHeight]);
+//creates a scale for the colour
+var colorScale = d3.scale.linear()
+                   .domain([0,d3.max(myData)])
+                   .range(["blue","red"]);
+//creates svg      
+var svg = d3.select("body")
+      .append("svg")
+            .attr("width",svgWidth)
+            .attr("height",svgHeight)
+            .attr("style","background-color:#ddd"); /* added some style*/
+  
+ //create the chart   
+svg.selectAll("rect")
+   .data(myData)
+   .enter()
+   .append("rect")  
+   .attr("x", function(d, i) {return i * (svgWidth / myData.length);})  //sets width and keeps it scalable 
+                                                                        //based on array size
+   .attr("y", function(d){return svgHeight - heightScale(d);}) //assigns heightScale
+   .attr("width", (svgWidth / myData.length) - spacing)  //determines width and spacing scalable based on array size
+   .attr("height", function(d){return heightScale(d)}) //returns height 
+   .attr("fill", function(d){return(colorScale(d));}); //assigns colorScale to chart
+              
+</script>
+</html>

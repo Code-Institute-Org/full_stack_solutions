@@ -1,0 +1,9 @@
+{
+	"devDependencies": {
+		"http-server": "^0.9.0"
+	},
+	"scripts": {
+		"prestart": "npm install",
+		"start": "node node_modules/http-server/bin/http-server -a localhost -p 8000 -c-1"
+	}
+}

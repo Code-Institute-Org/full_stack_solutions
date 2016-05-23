@@ -1,0 +1,146 @@
+body{
+	font-family: 'Roboto', sans-serif;
+ 	background-color: #eee;
+}
+
+h1{
+	font-size: 3em;
+	text-align: center;
+}
+h2{
+	font-size: 1em;
+	text-align: left;
+}
+p{
+	font-size: .9rem;
+}
+
+div{
+	border-radius: 4px;
+}
+
+.card_image{
+	width: 100%;
+}
+.bottom_button{
+	display: flex;
+	box-sizing:border-box;
+	border-radius: 4px;
+	display: block;
+	width: 100%;
+	background-color:rgba(129, 187, 201,.85);
+	text-align: center;
+	padding: 1em .75em;
+	text-decoration: none;
+	color: #fff;
+
+}
+
+.card_bottom{
+	display: flex;
+	flex-flow:column;
+}
+.card_head{
+	flex:0;
+}
+.card_para{
+	flex:1 0 auto;
+	display: none;
+}
+
+#container
+{
+	display: flex;		/* makes container a flexbox*/
+	flex-flow: row wrap; 	/* layout the boxes in rows and wrap them*/
+	box-sizing:border-box;
+	margin-right:auto;
+	margin-left:auto;
+	max-width:1050px;	
+}
+#logo{
+	width: 800px;
+	margin: auto;
+}
+
+.card{
+	flex:1; /* sets equal width to cards*/
+	display: flex;	/* make the contents controllable by flexbox*/
+	flex-flow:column;	/* sets as a column layout*/
+	min-width: 240px; 
+	margin: 10px;
+	padding: 20px;
+	background-color: #fff;
+}
+/*will set stream backround colour when used in jquery function*/
+.highlight_stream{
+	background-color: #EB5255;
+}
+
+#my_footer{
+	width:100%;
+	text-align: center;
+}
+#copyright{
+	margin-top:10px;
+	margin-bottom:10px;
+
+}
+
+/*************************
+Navigation
+
+**************************/
+
+nav{
+	font-family: roboto;
+	background-color: #eee;
+	margin: 30px auto;
+	width: 100%;
+}
+ul{
+	display: flex;/*creates a flew container*/
+	justify-content:space-between;
+	flex-flow: row;
+	align-items:baseline;
+	border-radius: 10px;
+	list-style-type: none; /*Remove Bullets*/
+	padding: 0;	
+}
+li{
+	flex:1;/*assigns width to list items*/
+	height: 30px;
+	padding:20px 20px 20px 20px;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#logoNav{
+	flex:6;/*assigns larger size to the logo*/
+	text-align: left;
+	font-size: 2em;
+	font-weight: bold;
+}
+/*underlines text*/
+.underline{
+  text-decoration:underline;
+}
+/*adds border*/
+.border{
+  border: solid 5px #ccc;
+}
+
+/*adds background-color pink*/
+.highlight{
+  background-color: pink;
+}
+
+@media screen and (max-width: 700px){
+	ul{
+		flex-flow: column;
+		align-items:center;
+	}
+	li{
+		font-size: 2em;
+	}
+}
+

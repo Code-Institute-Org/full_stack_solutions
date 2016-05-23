@@ -1,0 +1,34 @@
+<!doctype html>
+ <!--call collegeApp from app.js-->
+<html ng-app="collegeApp">
+  <head>
+    <title>My Angular App</title>
+    <!--add angular cdn-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+   
+  </head>
+  <body>
+    <!--add the student controller-->
+    <div ng-controller="StudentController">
+      <div>
+         <!--display greeting-->
+         {{ greeting()}}
+      </div>
+       <!--will toggle buttons-->
+      <button ng-click="showResults()" ng-hide="showResults()">Show Results</button>
+      <button ng-click="showResults()" ng-hide="showResults()">Hide Results</button>
+       <!--iterate over student subjects-->
+      <div ng-repeat="subject in student.subjects">
+         <!--display results -->
+        <div ng-hide   ="results">
+           result for: {{subject.name}} = {{subject.marks}}
+        </div>
+      </div> 
+       
+    </div>
+        <!--add your angular js files here-->
+     <script src="javascript/app.js"></script>
+    <script src="javascript/controller.js"></script>
+  </body>
+
+</html>  

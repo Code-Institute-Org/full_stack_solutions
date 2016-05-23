@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flexbox Model</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+	
+		body{
+			font-family: 'Roboto', sans-serif;
+			background-image: url(img/code-institute.jpg);
+		 	background-size: cover;
+		 	color: #ffffff;
+		}
+
+		h1{
+			font-size: 3em;
+			text-align: center;
+		}
+		h2{
+			font-size: 2.5rem;
+			text-align: center;
+		}
+		p{
+			font-size: 1.5rem;
+		}
+
+		div{
+			border-radius: 20px;
+		}
+		.transparent_Content{
+			background-color:rgba(129, 187, 201,.85);
+		}
+
+		#container{
+
+			display: flex;		/* makes container a flexbox*/
+			flex-flow: row wrap; 	/* layout the boxes in rows and wrap them*/
+			justify-content:space-around; /*margins will be divided evenly*/
+			max-width:1050px;			 /* (optional)change from 960px to 1050*/
+			margin-right:auto;
+			margin-left:auto;
+			max-width:1050px;
+			font-size: 0;
+		}
+		#logo{
+
+			width:100%;
+			font-size: 20px;
+		}
+
+		#footer{
+			width:100%;
+			margin-top: 50px;
+			padding: 8px 0;
+		}
+		#copyright{
+			text-align: center;
+		}
+
+		.content{
+			flex:1;	/* give each item an equal flex number(1 for example)*/
+			min-width: 280px;		/* give a minimum width for each*/ 
+			
+			display: inline-block;
+			width:450px;
+			margin: 10px;
+			padding: 20px;
+			font-size: 20px;
+		
+		}
+
+		@media screen and (min-width: 500px){   /* min-width for desktop */
+			#container{
+
+			}
+		   }
+
+	</style>
+	</head>
+	<body>
+	
+	<div id="logo">		
+		<h1>The Code Institute</h1>
+	</div>
+	<div id="container">
+		<div class="content">
+			 <h2>About Code Institute</h2>
+			 <p>Code Institute delivers intensive full stack web development training programmes, mentored online and in the classroom. You will learn the skills required to kick-start your career in web development.</p>
+		</div>
+		<div class="content transparent_Content">
+			<h2>Attend the Next Careers Open Evening</h2>
+			<p>If you have questions about your career in coding or simply want to meet the Code Institute team, then come along to our next Careers Open Evening in Dublin</p>
+		</div>
+		<div class="content transparent_Content">
+			<h2>Attend the Next Web Info Session</h2>
+			<p>If you have questions about your career in coding or simply want to meet the Code Institute team, then come along to our next Careers Open Evening in Dublin</p>
+		</div>
+		<div class="content transparent_Content">
+			<h2>Contextualised learning </h2>
+			<p>Once you join a Code Institute Bootcamp you will be taken on an accelerated contextualised learning path across 3 streams. Nothing is learned in isolation.We contextualise the content so that the knowledge and skills gained in each learning unit feeds into, and is expanded upon, within the next unit.The outputs of each stream will be a project. You will have the freedom to create your own project based on what you have been exposed within the current stream and the previous streams as we move through the programme.</p>
+		</div>
+		<div id="footer" class="transparent_Content">
+			<p id="copyright">Copyright Infomation</p>
+		</div>
+
+	</div>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<div ng-controller='SelectionController'>
+	<div class='container'>
+    	<h1>Form Selection Menu</h1>
+		<form name="selectionForm" ng-submit="submit()" novalidate>
+			<div>
+				<!--debug code-->
+				<p>selected item is : {{selectedItem}}</p>
+				<p>age of selected item is : {{selectedItem.age}} </p>
+				<p>selected car is : {{selectedCar}} </p>
+				<select ng-model="selectedItem" ng-options="item.name for item in items">
+				</select>
+			</div>
+			<br/>
+			<!--iterate through cars-->
+			<select ng-model="selectedCar">
+				<option ng-repeat="car in cars">{{car}}</option>
+			</select>
+			<br/>
+			<!--create checkbox's-->
+			<h2>Check Box Example</h2>
+			<label>Golf:
+				<input type="checkbox" ng-model="checkboxModel.golf">
+			</label>
+			<label>Fishing:
+				<input type="checkbox" ng-model="checkboxModel.fishing">
+			</label>
+			<label>Sailing:
+				<input type="checkbox" ng-model="checkboxModel.sailing">
+			</label>
+			<label>Vote:			
+				<input type="checkbox" ng-model="checkboxModel.vote"
+           					ng-true-value="'up'" ng-false-value="'down'">
+			</label>
+			<!--debug code-->
+			<br/>
+			<br/>
+			<tt>golf: {{checkboxModel.golf}}</tt><br/>
+			<tt>fishing: {{checkboxModel.fishing}}</tt><br/>
+			<tt>sailing: {{checkboxModel.sailing}}</tt><br/>
+			<tt>vote: {{checkboxModel.vote}}</tt><br/>
+			<h2>Radio Selection</h2>
+			<label>
+				<!--create radio buttons-->
+				<input type="radio" ng-model="color.name" value="red">
+			    Red
+			</label><br/>
+			<label>
+			    <input type="radio" ng-model="color.name" ng-value="specialValue">
+			    Green
+			</label><br/>
+			<label>
+			    <input type="radio" ng-model="color.name" value="blue">
+			    Blue
+			</label>
+			<!--debug code-->
+			<br/>
+			<tt>color = {{color.name | json}}</tt><br/>
+			<!--submit form button-->
+			<button class="btn">Submit</button>
+		</form>
+	</div>
+</div>
+</div>

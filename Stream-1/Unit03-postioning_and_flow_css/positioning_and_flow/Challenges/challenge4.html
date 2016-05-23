@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Position and Flow</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+
+			body{
+				font-family: roboto;
+			}
+			
+			#container
+			{
+				position: relative;/*must be set to relative to allow for absolute positioning boxes*/
+				top:100px;
+				margin-right:auto; /*center container with margins left & right set to auto*/
+				margin-left:auto;
+				width:600px;	/*to center an element it must have a fixed width*/
+				height: 400px;
+				background-color:#AA4639;
+				border-radius: 10px;
+				padding: 10px;
+				font-size: 0;	/* remove inline-block spacing*/
+
+			}
+			.box{
+				display: inline-block;
+				position: absolute;/* allows boxes to overlap the container when offset aginst the conatiner*/
+				width: 220px;
+				height: 150px;
+				text-align: center;
+				background-color: #81BBC9;
+				margin:10px;
+				border-radius:10px;
+				font-size: 35px;
+			}
+			#box1{
+				
+				top: -50px;
+				left: -100px;
+			}
+			#box2{
+				
+				top: -50px;
+				right: -100px;
+			}
+			#box3{
+				
+				bottom: -50px;
+				left: -100px;
+			}
+			#box4{
+				
+				bottom: -50px;
+				right: -100px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="box1" class="box"><h2>1</h2></div>
+			<div id="box2" class="box"><h2>2</h2></div>
+			<div id="box3" class="box"><h2>3</h2></div>
+			<div id="box4" class="box"><h2>4</h2></div>
+		</div>
+
+		
+
+	</body>
+</html>

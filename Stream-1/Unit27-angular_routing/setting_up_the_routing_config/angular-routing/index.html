@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular Routing</title>
+		<!-- include the bootstrap css -->
+		<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
+
+		<!-- include our vendor js -->
+		<script src="js/vendor/angular.min.js"></script>
+		<script src="js/vendor/angular-route.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+	</head>
+	<!-- set our ng-app in the body -->
+	<body ng-app="routingApp">
+		<nav class="navbar navbar-inverse">
+			<div class="navbar navbar-header">
+				<a href="#" class="navbar-brand">CHOCOBLOCK</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="#/about">About</a></li>
+				<li><a href="#/contact">Contact</a></li>
+			</ul>
+		</nav>
+		<!-- this is where our templates will be injected -->
+		<div ng-view></div>
+	</body>
+	<!-- these are our specific javascript files -->
+	<script src="js/app.js"></script>
+	<script src="js/controller.js"></script>
+</html>

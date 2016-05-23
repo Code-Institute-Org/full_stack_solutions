@@ -1,0 +1,29 @@
+/*applys style to input field that has valid content*/
+input.ng-valid {
+	border: 2px solid black;
+}
+/*applys style to input field that has invalid content*/
+input.ng-invalid{
+	border: 2px solid red;
+}
+
+/*applys style to submit  button that has invalid content*/
+input.ng-subinvalid{
+	border: 2px solid red;
+}
+
+/*applys style to error labels*/
+label {
+	font-weight: normal;
+	padding-top: 10px
+}
+
+
+button:active {
+	outline: none
+}
+/*applys style to error text*/
+p.error {
+	padding-top: 8px;
+	margin: 0px
+}

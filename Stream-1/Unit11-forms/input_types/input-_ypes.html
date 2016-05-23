@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="UTF-8">
+      <title>Form</title>
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+   
+      <!--
+         Form with HTML5 tags and basic CSS
+      -->
+      <style type="text/css">
+
+      body{
+         font-family: 'Roboto', sans-serif;
+      }
+         #container{
+            width: 400px;
+            margin: auto;
+
+
+         }
+         #input_types{/*basic styling for the form content*/
+             background-color:rgba(129, 187, 201,.2);
+
+
+         }
+         .submit{/*to offset submit buttton*/
+            margin-bottom: 10px;
+            margin-left: 100px;
+         }
+         .label{/*styling labels for the inputs*/
+            display: inline-block;
+            float: left;
+            clear: left;
+            text-align: left;
+            width: 100px;
+            margin-top: 5px;
+
+
+         }
+         legend{
+            font-size: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #999;
+            padding: 4px 15px;
+         }
+            
+         label.field{
+            display: block;
+            text-align: right;
+            width: 100px;
+            float: left;
+
+         }
+         input{/*styling for input fields*/
+            display: inline-block;
+            width: 200px;
+            border-radius: 5px;
+            padding: 6px 8px; 
+            margin-top: 6px;   
+         }
+         .field{
+            padding: 6px 8px;
+         }
+
+         #currency{
+             width: 220px;
+             border-radius: 5px;
+             padding: 6px 8px;
+         }
+
+         fieldset{
+            width: 450px;
+            border: 1px solid #999;
+            border-radius: 20px;
+            clear: both;
+            padding: 20px;
+            margin-bottom: 100px;
+            background-color:rgba(129, 187, 201,.2);
+
+         }
+      </style>
+   </head>
+   <body>
+      <div id="container">
+               <div id="input_types"><!-- wrapper for form-->
+                  <form>
+                     <!--assign classs to the labels-->
+                     <div class="label">First Name:</div> <input type="text" id="fname"  name="fname"/><br>
+                     <div class="label">Password: </div><input id="password" name="password" type="password" /><br>
+                     <div class="label">Email:</div><input id="email" name="email"  type="email" /><br>
+                     <div class="label">Website:</div><input id="website" name="website" type="url" /><br>
+                     <input  type="submit" class="submit" value="submit"/>
+                  </form> 
+               </div>
+              
+
+               
+    </div>
+   </body>
+
+</html>

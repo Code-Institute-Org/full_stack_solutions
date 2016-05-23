@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Chart ToolTips</title>
+<style>
+body {
+  font: 16px sans-serif;
+}
+rect:hover {
+    fill: #FFA623;  /* fill with a yellow */
+}
+/*style tool tip*/
+#tooltip {
+    position: absolute;
+    padding: 5px 10px; 
+    background: white; 
+    border-radius: 3px; 
+    font-family: dosis;   /* we need to import this font*/
+    font-weight: bold;  
+    box-shadow: 5px 2px 2px;/*add shadow*/
+}
+
+/*for tooltip*/
+.hidden {
+    display: none;  
+}
+
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+      
+</body>
+<script>
+// assign variables to svg width, height and spacing
+var svgWidth = 700,
+    svgHeight = 500;
+var spacing= 2;
+//create array
+var myData = [ 10, 15, 20, 30, 45, 50, 40, 45 ,50 , 40 ];
+
+//create tooltip
+var tooltip = d3.select("body")
+                 .append("div")
+				         .classed("hidden",true)
+                 .attr("id","tooltip");
+
+//sets the scale of svg height based on array data
+var heightScale = d3.scale.linear()
+                    .domain([0,d3.max(myData)])
+                    .range([0,svgHeight]);
+	//sets the scale of colours using array data				
+var colorScale = d3.scale.linear()
+                   .domain([0,d3.max(myData)])
+                   .range(["blue","red"]);
+	//creates svg and assigns it to a variable 			   
+var svg = d3.select("body")
+			      .append("svg")
+            .attr("width",svgWidth)
+            .attr("height",svgHeight)
+            .attr("style","background-color:#ddd"); /* added some style*/
+ 
+
+svg.selectAll("rect")
+   .data(myData)
+   .enter()
+   .append("rect")  
+   .attr("x", function(d, i) {return i * (svgWidth / myData.length);})  //defines width of x axis based on array  //data and svg width
+   .attr("y", function(d){return svgHeight - heightScale(d);}) 
+   .attr("width", (svgWidth / myData.length) - spacing)
+   .attr("height", function(d){return heightScale(d)})
+   .attr("fill", function(d){return(colorScale(d))})
+   .on("mouseover", function(d){    
+		d3.select("#tooltip")
+		  .style("left", d3.event.pageX-40 + "px")  // in this case we need        
+		  .style("top", d3.event.pageY-40 + "px")   //to append px as units
+		  .classed("hidden", false);
+		  tooltip.html(d);            
+		})
+	.on("mouseout", function(){    
+			d3.select("#tooltip")
+                      .classed("hidden", true);            
+		});
+
+</script>
+
+</html>

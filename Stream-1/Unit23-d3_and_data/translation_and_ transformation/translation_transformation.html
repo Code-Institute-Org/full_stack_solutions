@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Chart</title>
+<style>
+body {
+  font: 16px sans-serif;
+}
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+     
+</body>
+<script>
+
+//create variables for svg width height and spacing
+var svgWidth = 500;
+var svgHeight = 300;
+var spacing= 2;
+
+
+//create array
+var myData = [ 10, 15, 20, 30, 45, 50, 40, 40 ,50 , 40,45,80,50,90,43,25,45,89,200 , 30,50,300,60];
+
+//apply values to svg
+var svg = d3.select("body")
+     .append("svg")
+     .attr("width",svgWidth)
+     .attr("height",svgHeight)
+     .attr("style","background-color:#ddd");
+
+
+//sets up  transfor on  bar chart
+var g = svg.append('g')
+         .attr("transform","translate(0,-20)");
+
+//append to g 
+g.selectAll("rect")
+ .data(myData)
+ .enter()
+ .append("rect")
+ .style("opacity", 0)// adds zero   opacity on transsition start
+ .transition().duration(5000)
+ .style("opacity", 1)//at transition end, full opacity returns
+ .attr("fill", "#30C5C7")  
+ .attr("x", function(d, i) {
+    return i * (svgWidth / myData.length);})    /* multiply the index by the width  --keeps scale */ 
+.attr("y", function(d){return svgHeight - d * 5;})   /* height is 300 */
+.attr("width", svgWidth / myData.length - spacing)/*keeps scale */
+.attr("height", function(d){return d * 5;});
+
+
+
+
+      
+</script>
+</html>

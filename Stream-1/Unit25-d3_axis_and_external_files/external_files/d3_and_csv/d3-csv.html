@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>D3 CSV</title>
+<style>
+body {
+  font: 16px sans-serif;
+}
+rect:hover {
+    fill: #FFA623;  /* fill with a yellow */
+}
+/*styling for tooltip*/
+#tooltip {
+    position: absolute;
+    padding: 5px 10px; 
+    background: white; 
+    border-radius: 3px; 
+    font-family: dosis;   /* we need to import this font*/
+    font-weight: bold;  
+}
+/*applies to tooltip*/
+.hidden {
+    display: none;  
+}
+/*style the chart title*/
+.title {
+  font: 25px sans-serif;
+  }
+/*styling for y axis text*/
+.axis text {
+  font: 10px sans-serif;
+}
+/*styling for y axis bar*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+} 
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+     
+</body>
+<script>
+///creates svg width and height variables and spacing
+var svgWidth = 700,
+    svgHeight = 500;
+var spacing= 2;
+
+
+//creates a margin setting
+var margin = {top: 50, right: 0, bottom: 50, left: 50},
+//applies margin to canvas width and height
+canvasWidth = svgWidth + margin.right + margin.left;
+canvasHeight = svgHeight + margin.top + margin.bottom;
+ 
+
+
+
+
+
+//retrieves data from the csv file
+d3.csv("list.csv", function(error, myData) {
+    myData.forEach(function(d) {
+       d.username = d.user;
+       d.score = +d.highscore;   //the + here converts to a number
+     });
+ //assigns function to a variable   
+var maxData = d3.max(myData, function(d){return d.score;});
+
+//creates a scale for height
+var heightScale = d3.scale.linear()
+                    .domain([0, maxData])
+                    .range([0,svgHeight]);
+//creates a scale for the y axis      
+var yAxisScale = d3.scale.linear()
+                    .domain([0, maxData])
+                    .range([svgHeight , 0]);
+//creates a scale for the x axis 
+var xAxisScale = d3.scale.ordinal()
+                  .domain(myData.map(function(d) { return d.username; }))
+                  .rangeBands([0, svgWidth]);
+
+//creates a scale for the colour scale
+var colorScale = d3.scale.linear()
+                   .domain([0, maxData])
+                   .range(["blue","red"]);
+
+//creates a tooltip
+var tooltip = d3.select("body")
+                 .append("div")
+         .classed("hidden",true)
+                 .attr("id","tooltip"); 
+
+
+
+//postions yAxis and applys ticks   to the scale     
+var yAxis = d3.svg.axis()
+              .scale(yAxisScale)
+              .orient("left")
+              .ticks(5);
+
+//positins xAxis and applys ticks based on array length 
+var xAxis = d3.svg.axis()
+    .scale(xAxisScale)
+    .orient("bottom")
+  .ticks(myData.length);
+
+//creates the canvas and appends the svg to it      
+var canvas = d3.select("body")
+            .append("svg")
+            .attr("width",canvasWidth)
+            .attr("height",canvasHeight)
+            .attr("style","background-color:#ddd"); /* added some style*/
+    
+			
+canvas.append("g")
+  .attr("class","axis")  // style axis via CSS
+  .attr("transform","translate("+ (margin.left - 2) +"," + margin.bottom + ")")
+  .call(yAxis);
+
+  canvas.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate("+ margin.left +","+ (canvasHeight - (margin.bottom - 2)) + ")")
+    .call(xAxis);
+//creates title
+  canvas.append("g")
+  .append("text")
+  .text("Bar Chart")
+  .attr("x", canvasWidth / 2)
+  .attr("y", 30)
+  .attr("class","title");
+  
+			
+var svg = canvas.append("g")
+            .attr("width",svgWidth)
+            .attr("height",svgHeight)
+            .attr("style","background-color:#ddd")
+			.attr("transform","translate("+ margin.left +"," + margin.bottom + ")");
+	//create the chart
+	svg.selectAll("rect")
+		   .data(myData)
+		   .enter()
+		   .append("rect")  
+		   .attr("x", function(d, i) {return i * (svgWidth / myData.length);})  
+		   .attr("y", function(d){return svgHeight - heightScale(d.score);}) 
+		   .attr("width", (svgWidth / myData.length) - spacing)
+		   .attr("height", function(d){return heightScale(d.score)})
+		   .attr("fill", function(d){return(colorScale(d.score));})
+		   .on("mouseover", function(d){    
+			d3.select("#tooltip")
+			  .style("left", d3.event.pageX + "px")
+			  .style("top", d3.event.pageY - 50 + "px")
+			  .classed("hidden", false)
+			  tooltip.html(d.score);            
+			})
+			.on("mouseout", function(){    
+			d3.select("#tooltip")
+			  .classed("hidden", true);            
+			});
+			 
+     });         
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS Filters</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<style>
+		body{
+			font-family: roboto;
+		}
+		div{
+			display: inline-block;		/* Make inline-Block*/
+			vertical-align: top;		/*so images will sit side by side*/
+			width:500px;
+			margin:0 auto 0 auto;
+			padding: 20px;
+			border:2px solid black;
+			border-radius: 10px;
+			background-color: #99CCFF;
+
+		}
+		img{
+			float: right;/*move image to right*/
+			margin: 0 20px 20px 20px;
+			border:2px solid black;
+		}
+		.greyscale{
+			-webkit-filter: grayscale(.8);/*apply filter to image*/
+
+		}
+		.sepia{
+			-webkit-filter: sepia(1); /*apply filter to image*/
+		}
+		.blur{
+			-webkit-filter: blur(2px); /*apply filter to image*/
+		}
+		.multi{
+			-webkit-filter: blur(2px) sepia(.5) opacity(0.8); /*apply filter to image*/
+		}
+		
+		
+
+		
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Original</h1>
+			<img src="imgs/owl.jpg" alt="owl" width="320" heigth="240"/>
+			
+		</div>
+		<div>
+			<h1>Greyscale</h1>
+			<img src="imgs/owl.jpg" class="greyscale" alt="owl" width="320" heigth="320"/>
+			
+		</div>
+		<div>
+			<h1>Blur</h1>
+			<img src="imgs/owl.jpg"class="blur" alt="owl" width="320" heigth="240"/>
+			
+		</div>
+		<div>
+			<h1>Blur Sepia Opacity</h1>
+			<img src="imgs/owl.jpg" class="multi" alt="owl" width="320" heigth="320"/>
+			
+		</div>
+	</body>
+</html>
+
+
+

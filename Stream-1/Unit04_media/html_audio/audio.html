@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HTML5 Audio</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+		<style type="text/css">
+		body{
+			background-color: #000;
+			font-family: roboto;
+		}
+		header{
+			width: 300px;
+			margin: 0px auto;
+		}
+		h1{
+
+			color: #fff
+		}
+		audio{
+			display: block;
+			margin: 100px auto;
+		}
+		</style>
+
+	</head>
+	<body>
+		<header><h1>HTML5 - Audio</h1></header>
+		
+		<!--loop will make the audio play again each time it finishes, preload=auto will tell browser to load all content -->
+		<audio auto controls loop preload="auto">
+		
+			<!-- If the browser can't play MP3 try OGG then WAV -->
+			<source src="audio/radiohead.ogg"/>
+			<source src="audio/tail.mp3"/> 
+				
+		</audio>
+	
+	</body>
+	
+</html>

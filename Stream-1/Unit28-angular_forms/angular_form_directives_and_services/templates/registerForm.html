@@ -1,0 +1,65 @@
+ <div class='container'>
+ 	<!--create form-->
+	<form class='viewType' name="register_form" novalidate ng-submit="registerForm(register_form)">
+	  	<fieldset>
+	    	<legend>Register</legend>
+	    	<div class="row">
+				<div class="col-offset-md-2 col-md-4">
+			  		<label>Username</label>
+					<input class="form-control"
+						type="text" 
+						placeholder="Enter Username" 
+						name="username" 
+						ng-model="register.username" 
+						ng-minlength=3 
+						ng-maxlength=20 
+						required  />
+				</div>
+				<!-- add error messages ror username-->
+				<div class="col-md-5 error-container" ng-show="register_form.username.$dirty 
+														&& register_form.username.$invalid 
+														&& submitted">
+					<label style='color: red'>Error:</label>
+					<p class="error" ng-show="register_form.username.$error.required">Please input a username</p>
+					<p class="error" ng-show="register_form.username.$error.minlength">Your username is required to be at least 3 characters</p>
+					<p class="error" ng-show="register_form.username.$error.maxlength">Your username cannot be longer than 20 characters</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-offset-md-2 col-md-4">
+			  		<label>Email</label>
+					<input class="form-control"
+						type="email" 
+						placeholder="Enter email address" 
+						name="email" 
+						ng-model="register.email" 
+						ng-minlength=5 
+						ng-maxlength=40 
+						required  />
+				</div>
+				<div class="col-md-5 error-container" ng-show="register_form.email.$dirty 
+														&& register_form.email.$invalid 
+														&& submitted">
+					<!--add error messages for email-->
+					<label style='color: red'>Error:</label>
+					<p class="error" ng-show="register_form.email.$error.required">Please input an email</p>
+					<p class="error" ng-show="register_form.email.$error.minlength">Your email is required to be at least 5 characters</p>
+					<p class="error" ng-show="register_form.email.$error.maxlength">Your email cannot be longer than 40 characters</p>
+					<p class="error" ng-show="register_form.email.$error.email">That is not a valid email. Please input a valid email.</p>
+				</div>
+			</div>
+		
+			<br/>
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+			<!--debug code-->
+			<br/>
+			name input valid: {{register_form.username.$valid}}
+			<br/>
+			email input valid: {{register_form.email.$valid}}
+			<br/>
+			Form valid: {{register_form.$valid}}
+			<br/> 
+	  	</fieldset>
+	</form>
+</div>

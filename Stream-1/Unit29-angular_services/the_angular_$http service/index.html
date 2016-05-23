@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app='collegeApp'>
+  <head>
+    <title>My Angular App</title>
+    <!--add vendor files-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
+  </head>
+  <body ng-app='myApp'>
+    <!--pass in promiseController-->
+ <div ng-controller='PromiseController'>
+     <p ng-hide='PromiseComplete'> Shows while Promise Executing</p>
+     <!--displays message after the interval-->
+       Well, {{message}} 
+</div>
+</body>
+<!--add your js files here-->
+  <script src='javascript/app.js'></script>
+  <script src='javascript/controller.js'></script>
+  <script src='javascript/service.js'></script>
+</html> 

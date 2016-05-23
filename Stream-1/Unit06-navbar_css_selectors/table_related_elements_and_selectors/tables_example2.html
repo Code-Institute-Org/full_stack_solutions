@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tables</title>
+  <style type="text/css">
+      table {
+        border-collapse: collapse;
+    }
+
+      table, td, th {/*applies style to table*/
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        
+        }
+        th{
+           background-color: #87CEEB;/*applies background colour to table header*/
+        }
+        td:nth-child(2n) {     /*highlights every second column in yellow , starts counting from table header */ 
+          background-color: yellow;  
+        }
+
+  </style>
+  </head>
+  <body>
+    <table>
+        <tr>
+          <th></th>
+          <th>Country</th>
+          <th>Price</th>
+          <th>Nutrition</th>
+          <th>Category</th>
+        </tr>
+        <tr>
+          <th>Spinach</th>
+          <td>America</td>
+          <td>28</td>
+          <td>90</td>
+          <td>Veg</td>
+        </tr>
+        <tr>
+          <th>Carrots</th>
+          <td>France</td>
+          <td>56</td>
+          <td>75</td>
+          <td>Veg</td>
+      </tr>
+      <tr>
+          <th>Broccoli</th>
+          <td>Bulgaria</td>
+          <td>12</td>
+          <td>7</td>
+          <td>Veg</td>
+      </tr>
+      <tr>
+          <th>Orange</th>
+          <td>Morocco</td>
+          <td>15</td>
+          <td>50</td>
+          <td>Fruit</td>
+      </tr>
+      <tr>
+          <th>Tangerine</th>
+          <td>Cyprus</td>
+          <td>12</td>
+          <td>25</td>
+          <td>Fruit</td>
+      </tr>
+      <tr>
+          <th>Melon</th>
+          <td>Scicly</td>
+          <td>24</td>
+          <td>60</td>
+          <td>Fruit</td>
+      </tr>
+      <tr>
+          <th>Rhubarb</th>
+          <td>Ireland</td>
+          <td>12</td>
+          <td>32</td>
+          <td>Veg</td>
+      </tr>
+ 
+    
+  </body>
+</html>

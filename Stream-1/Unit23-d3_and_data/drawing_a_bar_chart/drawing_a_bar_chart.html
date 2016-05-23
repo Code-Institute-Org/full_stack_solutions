@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<style>
+body {
+  font: 16px sans-serif;
+}
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+     
+</body>
+<script>
+//place you D3 code here
+
+
+var myData = [ 10, 15, 20, 30, 45, 50, 40, 45 ,50 , 40 ];
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width",500)
+            .attr("height",300)
+            .attr("style","background-color:#ddd"	); /* added some style*/
+
+//create retangles and add myData to it
+ svg.selectAll("rect")
+      .data(myData)
+      .enter()
+      .append("rect")   
+      .attr("fill", "#30C5C7")  
+  	  .attr("x", function(d,i){
+            return i * (30 +3)    }) /* multiply the index by the width for x axis  */
+      .attr("y", function(d){return 300 - d *	5;})   /* height is 300 */
+      .attr("width", 30)/*width of rectangles*/
+      .attr("height", function(d){return d * 5;});/*inverts so not upside down*/
+
+
+
+      
+</script>
+<script src="js/script.js"></script>
+</html>

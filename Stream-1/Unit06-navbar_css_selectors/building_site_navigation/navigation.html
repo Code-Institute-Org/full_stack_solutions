@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html land="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>My Nav</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		
+		<style type="text/css">
+		body {
+	  		background-color: #292E37;
+		}
+		
+		nav ul li a {
+		    display: block;/*stacks menu items on top of each other for mobile first approach*/
+		    text-decoration: none;
+		    font-family: roboto;
+		    color: #fff;
+		}
+		nav ul {
+			background-color: #1D2026;
+		    list-style: none;
+		    text-align: center;
+		}
+
+		nav ul li {
+		     font-size:30px;
+		     border-bottom: 1px solid #444;
+		     padding: 10px 5px;
+		     background-color: #1D2026;/*sets same background as the nav*/
+		}
+		nav ul li:hover {
+		     background-color: #555;/*changes background of list item when hovered over */
+		     transition: all .3s ease;
+		}
+		 nav ul li:active{					
+			background-color:white;		/*add active pseudo-class*/
+		}
+		li:last-of-type{
+			border-bottom: 0;/*removes border from last list item*/
+		}
+	
+		@media screen and (min-width: 665px) {
+		    nav {
+		        font-size: 0;
+		    }
+
+		    nav ul li {
+		        display: inline-block;/*changes to this for desktop screen size*/
+		        width: 120px;
+		        font-size: 20px;
+		        border-bottom: none;/*removes border from bottom*/
+		   } 
+		}
+
+		</style>
+	</head>
+	<body>
+	<nav>
+	  <ul>
+	     <li><a href="#">Home</a></li>
+	     <li><a href="#">About</a></li>
+	     <li><a href="#">Portfolio</a></li>
+	     <li><a href="#">Blog</a></li>
+	     <li><a href="#">Contact</a></li>
+	  </ul>
+	</nav>
+	</body>
+</html>

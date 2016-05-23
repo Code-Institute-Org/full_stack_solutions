@@ -1,0 +1,4 @@
+p{
+	/*applies colour red to all paragraghs unless over riiden by internal or inline css*/
+	color: red;
+}
