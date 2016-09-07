@@ -1,24 +1,21 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
    <head>
-   <meta charset="UTF-8">
-      <title>Numbers & Patterns</title>
+      <meta charset="UTF-8">
+      <title>Numbers &amp; Patterns</title>
       <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-   
+      
       <!--
-         Form with HTML5 tags and basic CSS
+      Form with HTML5 tags and basic CSS
       -->
       <style type="text/css">
-
-      body{
-         font-family: 'Roboto', sans-serif;
-      }
+         body{
+            font-family: 'Roboto', sans-serif;
+         }
          #container{
             width: 550px;
             margin: auto;
-
          }
-
          legend{
             font-size: 30px;
             background-color: #fff;
@@ -26,13 +23,11 @@
             border: 1px solid #999;
             padding: 4px 15px;
          }
-            
          label.field{
             display: block;
             text-align: right;
             width: 100px;
             float: left;
-
          }
          input{
             width: 200px;
@@ -42,13 +37,11 @@
          .field{
             padding: 6px 8px;
          }
-
          #currency{
-             width: 220px;
-             border-radius: 5px;
-             padding: 6px 8px;
+            width: 220px;
+            border-radius: 5px;
+            padding: 6px 8px;
          }
-
          fieldset{
             width: 450px;
             border: 1px solid #999;
@@ -57,47 +50,35 @@
             padding: 20px;
             margin-bottom: 100px;
             background-color:rgba(129, 187, 201,.2);
-
          }
       </style>
    </head>
    <body>
       <div id="container">
+         <form>
             <fieldset>
-                <form>
-                  <legend>Registration</legend>
-                     <label for="fname" class="field"> Username:</label>  
-                     <input type="text" id="fname" placeholder="required field" name="fname"/>
-
-                      <label for="age" class ="field">Age:</label>
-                      <input id="age" name="age" placeholder="enter your age" type="number" min="0" max="100"/>
-
-                     <label for="password" class ="field">Password:</label>
-                     <input id="password" name="password" placeholder="enter password"type="password" />
-
-                     <label for="email" class ="field">Email:</label>
-                     <input id="email" name="email"  placeholder="enter email" type="email" />
-
-                     <label for="telephone" class ="field">Telephone:</label>
-                     <input id="telephone" name="telephone" placeholder="mobile number" pattern ="[0-9]{10}" title="Mobile phone number expected beginning 08********"type="tel" />
-
-                      <label for="eircode" class="field"> Eircode:</label>  
-                     <input id="eircode" name="eircode" type="text" placeholder="eircode " pattern="[0-9A-Za-z]{7}" title="Seven character alpha-numeric code."/>
-
-                     <label for="passport" class="field"> Passport:</label>  
-                     <input id="passport" name="passport" type="text" placeholder="passport number" pattern="[0-9]{7}[A-Za-z]{1}" title="Seven numbers followed by a single upper or lower case letter."/>
-
-                     <label for="credit_card" class ="field">Credit Card:</label>
-                     <input id="credit_card" name="credit_card" placeholder="Credit Card  number" pattern ="[0-9]{16}" title="Credit car number 16 numbers long" type ="text"/>
-
-                     <label for="website" class ="field">Website:</label>
-                     <input id="website" name="website" placeholder="enter full url" type="url" />
-
-                     <label for ="submit" class="field"></label>
-                     <input type="submit" value="submit"/>
-            </form> 
+               <legend>Registration</legend>
+               <label for="fname" class="field"> Username:</label>
+               <input type="text" id="fname" placeholder="required field" name="fname"/>
+               <label for="age" class="field">Age:</label>
+               <input id="age" name="age" placeholder="enter your age" type="number" min="0" max="100"/>
+               <label for="password" class="field">Password:</label>
+               <input id="password" name="password" placeholder="enter password" type="password" />
+               <label for="email" class="field">Email:</label>
+               <input id="email" name="email" placeholder="enter email" type="email" />
+               <label for="telephone" class="field">Telephone:</label>
+               <input id="telephone" name="telephone" placeholder="mobile number" pattern ="[0-9]{10}" title="Mobile phone number expected beginning 08********" type="tel" />
+               <label for="eircode" class="field"> Eircode:</label>
+               <input id="eircode" name="eircode" type="text" placeholder="eircode " pattern="[0-9A-Za-z]{7}" title="Seven character alpha-numeric code."/>
+               <label for="passport" class="field"> Passport:</label>
+               <input id="passport" name="passport" type="text" placeholder="passport number" pattern="[0-9]{7}[A-Za-z]{1}" title="Seven numbers followed by a single upper or lower case letter."/>
+               <label for="credit_card" class="field">Credit Card:</label>
+               <input id="credit_card" name="credit_card" placeholder="Credit Card  number" pattern ="[0-9]{16}" title="Credit car number 16 numbers long" type ="text"/>
+               <label for="website" class="field">Website:</label>
+               <input id="website" name="website" placeholder="enter full url" type="url" />
+               <input type="submit" value="submit"/>
             </fieldset>
-    </div>
+         </form>
+      </div>
    </body>
-
 </html>
