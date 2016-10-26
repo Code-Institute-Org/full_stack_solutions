@@ -1,5 +1,5 @@
 # Angular Todo App
-[Features](#contributing)
+
 ## Overview
 
 ### What is this app for?
