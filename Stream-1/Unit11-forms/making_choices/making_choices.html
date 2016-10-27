@@ -1,153 +1,175 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-   <head>
-   <meta charset="UTF-8">
-      <title>Making Choices</title>
-      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-   
-      <!--
+
+<head>
+    <meta charset="UTF-8">
+    <title>Making Choices</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!--
          Form with HTML5 tags and basic CSS
       -->
-      <style type="text/css">
+    <style type="text/css">
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #container {
+        width: 550px;
+        margin: auto;
+    }
+    
+    legend {
+        font-size: 30px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #999;
+        padding: 4px 15px;
+    }
+    
+    label.field {
+        display: block;
+        text-align: right;
+        width: 100px;
+        float: left;
+    }
+    
+    input {
+        width: 200px;
+        border-radius: 5px;
+        padding: 6px 8px;
+    }
+    
+    .field {
+        padding: 6px 8px;
+    }
+    
+    #zodiac_signs {
+        width: 220px;
+        border-radius: 5px;
+        padding: 6px 8px;
+    }
+    
+    fieldset {
+        width: 450px;
+        border: 1px solid #999;
+        border-radius: 20px;
+        clear: both;
+        padding: 20px;
+        margin-bottom: 100px;
+        background-color: rgba(129, 187, 201, .2);
+    }
 
-      body{
-         font-family: 'Roboto', sans-serif;
-      }
-         #container{
-            width: 550px;
-            margin: auto;
+    section {
+        margin-bottom: 5px;
+    }
 
-         }
+    #checkbox {
+        padding: 6px 8px;
+    }
 
-         legend{
-            font-size: 30px;
-            background-color: #fff;
-            border-radius: 5px;
-            border: 1px solid #999;
-            padding: 4px 15px;
-         }
-            
-         label.field{
-            display: block;
-            text-align: right;
-            width: 100px;
-            float: left;
+    #checkbox input {
+        width: 25px;
+        margin-top: 20px;
+    }
 
-         }
-         input{
-            width: 200px;
-            border-radius: 5px;
-            padding: 6px 8px;
+    #radio {
+        padding: 6px 8px;
+    }
 
-         }
-         .field{
-            padding: 6px 8px;
-         }
+    #radio input {
+        width: 25px;
+        margin-top: 10px;
+    }
 
-         #currency{
-             width: 220px;
-             border-radius: 5px;
-             padding: 6px 8px;
-         }
+    #submit {
+        width: 100%;
+    }
 
-         fieldset{
-            width: 450px;
-            border: 1px solid #999;
-            border-radius: 20px;
-            clear: both;
-            padding: 20px;
-            margin-bottom: 100px;
-            background-color:rgba(129, 187, 201,.2);
+    </style>
+</head>
 
-         }
-      </style>
-   </head>
-   <body>
-      <div id="container">
-                <form>
-                   <fieldset>
-                  <legend>Registration</legend>
-                     <label for="fname" class="field"> Username:</label>  
-                     <input type="text" id="fname" placeholder="required field" name="fname"/>
-
-                      <label for="age" class ="field">Age:</label>
-                      <input id="age" name="age" placeholder="enter your age" type="number" min="0" max="100"/>
-
-                     <label for="password" class ="field">Password:</label>
-                     <input id="password" name="password" placeholder="enter password" type="password" />
-
-                     <label for="email" class ="field">Email:</label>
-                     <input id="email" name="email"  placeholder="enter email" type="email" />
-
-                     <label for="telephone" class ="field">Telephone:</label>
-                     <input id="telephone" name="telephone" placeholder="mobile number" pattern ="[0-9]{10}" title="Mobile phone number expected beginning 08********" type="tel" />
-
-                     <label for="eircode" class="field"> Eircode:</label>  
-                     <input id="eircode" name="eircode" type="text" placeholder="eircode " pattern="[0-9A-Za-z]{7}" title="Seven character alpha-numeric code."/>
-
-                     
-
-                     <label for="date" class="field"> Date:</label>  
-                     <input id="date" name="date" type="date" />
-
-                     <label for="would_you_ike" class="field"> Would you like:</label>  
-                     <label for="starter" > </label>  
-                     <input type="checkbox" value="starter"/>Starter
-                     <label for="main" > </label>  
-                     <input type="checkbox" value="main"/>Main
-                     <label for="desert" > </label>  
-                     <input type="checkbox" value="desert"/>Desert
-
-                     <label for="gender" class="field"> Gender:</label> 
-                     <label for="male"> </label>   
-                     <input id="male" type="radio" name="gender" value="male"/>Male
-                     <label for="female"> </label>  
-                     <input id="male" type="radio" name="gender" value="female"/>Female
-                     <label for="other"> </label>  
-                     <input id="male" type="radio" name="gender" value="other"/>Other
-
-                     <label for="zodiac_signs" class="field">Zodiac signs</label>
-                     <select id="currency" >
-                             <option value="aries">Aries</option> 
-                             <option value="gemini">Gemini</option   >
-                             <option value="cancer">Cancer</option> 
-                             <option value="virgo">Virgo</option> 
-                             <option value="leo">Leo</option> 
-                             <option value="scorpio">Scorpio</option> 
-                             <option value="sagittarius">Sagittarius</option> 
-                             <option value="capricorn">Capricorn</option> 
-                             <option value="aquarius">Aquarius</option> 
-                             <option value="pisces">Pisces</option>
-                     </select>
-
-                     <label for="music_genre" class="field">Music Genre:</label>
-                     <input id="music_genre" list="music_genre" name="music_genre" placeholder="type for autofill selections">
-                     <datalist id="music_genre">
-                              <option value="Indie">
-                              <option value="Dance">
-                              <option value="Folk">
-                              <option value="Rock">
-                              <option value="Punk">
-                     </datalist>
-
-                     <label for="range" class="field">Range:   </label>
-                     <input id="range" type="range" name="range" min="0" max="11">
-
-                     <label for="passport" class="field"> Passport:</label>  
-                     <input id="passport" name="passport" type="text" placeholder="passport number" pattern="[0-9]{7}[A-Za-z]{1}" title="Seven numbers followed by a single upper or lower case letter."/>
-
-                     <label for="credit_card" class ="field">Credit Card:</label>
-                     <input id="credit_card" name="credit_card" placeholder="Credit Card  number" pattern ="[0-9]{16}" title="Credit car number 16 numbers long" type ="text"/>
-
-                     <label for="website" class ="field">Website:</label>
-                     <input id="website" name="website" placeholder="enter full url" type="url" />
-
-                     <label for="submit" class="field"></label>
-                     <input  id="submit" type="submit" value="submit"/>
-                  </fieldset>
-            </form> 
-            
+<body>
+    <div id="container">
+        <form>
+            <fieldset>
+                <legend>Registration</legend>
+                <section class="input-boxes">
+                    <label for="fname" class="field"> Username:</label>
+                    <input type="text" id="fname" placeholder="required field" name="fname" />
+                    <label for="age" class="field">Age:</label>
+                    <input id="age" name="age" placeholder="enter your age" type="number" min="0" max="100" />
+                    <label for="password" class="field">Password:</label>
+                    <input id="password" name="password" placeholder="enter password" type="password" />
+                    <label for="email" class="field">Email:</label>
+                    <input id="email" name="email" placeholder="enter email" type="email" />
+                    <label for="telephone" class="field">Telephone:</label>
+                    <input id="telephone" name="telephone" placeholder="mobile number" pattern="[0-9]{10}" title="Mobile phone number expected beginning 08********" type="tel" />
+                    <label for="eircode" class="field"> Eircode:</label>
+                    <input id="eircode" name="eircode" type="text" placeholder="eircode " pattern="[0-9A-Za-z]{7}" title="Seven character alpha-numeric code." />
+                    <label for="date" class="field"> Date:</label>
+                    <input id="date" name="date" type="date" />
+                </section>
+                <section id="checkbox">
+                    <label for="would_you_ike" class="field"> Would you like:</label>
+                    <label for="starter"> </label>
+                    <input type="checkbox" value="starter" />Starter
+                    <label for="main"> </label>
+                    <input type="checkbox" value="main" />Main
+                    <label for="desert"> </label>
+                    <input type="checkbox" value="desert" />Desert
+                </section>
+                <section id="radio">
+                    <label for="gender" class="field"> Gender:</label>
+                    <label for="male"> </label>
+                    <input id="male" type="radio" name="gender" value="male" />Male
+                    <label for="female"> </label>
+                    <input id="male" type="radio" name="gender" value="female" />Female
+                    <label for="other"> </label>
+                    <input id="male" type="radio" name="gender" value="other" />Other
+                </section>
+                <section id="dropdown">
+                    <label for="zodiac_signs" class="field">Zodiac signs</label>
+                    <select id="zodiac_signs">
+                        <option value="aries">Aries</option>
+                        <option value="gemini">Gemini</option>
+                        <option value="cancer">Cancer</option>
+                        <option value="virgo">Virgo</option>
+                        <option value="leo">Leo</option>
+                        <option value="scorpio">Scorpio</option>
+                        <option value="sagittarius">Sagittarius</option>
+                        <option value="capricorn">Capricorn</option>
+                        <option value="aquarius">Aquarius</option>
+                        <option value="pisces">Pisces</option>
+                    </select>
+                </section>
+                <section id="datalist">
+                    <label for="music_genre" class="field">Music Genre:</label>
+                    <input id="music_genre" list="music_genre" name="music_genre" placeholder="type for autofill selections">
+                    <datalist id="music_genre">
+                        <option value="Indie">
+                        <option value="Dance">
+                        <option value="Folk">
+                        <option value="Rock">
+                        <option value="Punk">
+                    </datalist>
+                </section>
+                <section id="range">
+                    <label for="range" class="field">Range: </label>
+                    <input id="range" type="range" name="range" min="0" max="11">
+                </section>
+                <section class="input-boxes">
+                    <label for="passport" class="field"> Passport:</label>
+                    <input id="passport" name="passport" type="text" placeholder="passport number" pattern="[0-9]{7}[A-Za-z]{1}" title="Seven numbers followed by a single upper or lower case letter." />
+                    <label for="credit_card" class="field">Credit Card:</label>
+                    <input id="credit_card" name="credit_card" placeholder="Credit Card  number" pattern="[0-9]{16}" title="Credit car number 16 numbers long" type="text" />
+                    <label for="website" class="field">Website:</label>
+                    <input id="website" name="website" placeholder="enter full url" type="url" />
+                    <label for="submit" class="field"></label>
+                    <input id="submit" type="submit" value="submit" />
+                </section>
+            </fieldset>
+        </form>
     </div>
-   </body>
+</body>
 
 </html>
