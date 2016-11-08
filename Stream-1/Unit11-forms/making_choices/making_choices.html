@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Making Choices</title>
@@ -87,7 +86,6 @@
 
     </style>
 </head>
-
 <body>
     <div id="container">
         <form>
@@ -110,22 +108,22 @@
                     <input id="date" name="date" type="date" />
                 </section>
                 <section id="checkbox">
-                    <label for="would_you_ike" class="field"> Would you like:</label>
-                    <label for="starter"> </label>
-                    <input type="checkbox" value="starter" />Starter
-                    <label for="main"> </label>
-                    <input type="checkbox" value="main" />Main
-                    <label for="desert"> </label>
-                    <input type="checkbox" value="desert" />Desert
+                    <label class="field"> Would you like:</label>
+                    <input id="starter" type="checkbox" value="starter" />
+                    <label for="starter">Starter</label>
+                    <input id="main" type="checkbox" value="main" />
+                    <label for="main">Main</label>
+                    <input id="desert" type="checkbox" value="desert" />
+                    <label for="desert">Desert</label>
                 </section>
                 <section id="radio">
-                    <label for="gender" class="field"> Gender:</label>
-                    <label for="male"> </label>
-                    <input id="male" type="radio" name="gender" value="male" />Male
-                    <label for="female"> </label>
-                    <input id="male" type="radio" name="gender" value="female" />Female
-                    <label for="other"> </label>
-                    <input id="male" type="radio" name="gender" value="other" />Other
+                    <label class="field">Gender:</label>
+                    <input id="male" type="radio" name="gender" value="male" />
+                    <label for="male">Male</label>
+                    <input id="female" type="radio" name="gender" value="female" />
+                    <label for="female">Female</label>
+                    <input id="other" type="radio" name="gender" value="other" />
+                    <label for="other">Other</label>
                 </section>
                 <section id="dropdown">
                     <label for="zodiac_signs" class="field">Zodiac signs</label>
@@ -143,8 +141,8 @@
                     </select>
                 </section>
                 <section id="datalist">
-                    <label for="music_genre" class="field">Music Genre:</label>
-                    <input id="music_genre" list="music_genre" name="music_genre" placeholder="type for autofill selections">
+                    <label class="field">Music Genre:</label>
+                    <input list="music_genre" name="music_genre" placeholder="type for autofill selections">
                     <datalist id="music_genre">
                         <option value="Indie">
                         <option value="Dance">
@@ -153,12 +151,12 @@
                         <option value="Punk">
                     </datalist>
                 </section>
-                <section id="range">
-                    <label for="range" class="field">Range: </label>
+                <section id="range_input">
+                    <label for="range" class="field">Range:</label>
                     <input id="range" type="range" name="range" min="0" max="11">
                 </section>
                 <section class="input-boxes">
-                    <label for="passport" class="field"> Passport:</label>
+                    <label for="passport" class="field">Passport:</label>
                     <input id="passport" name="passport" type="text" placeholder="passport number" pattern="[0-9]{7}[A-Za-z]{1}" title="Seven numbers followed by a single upper or lower case letter." />
                     <label for="credit_card" class="field">Credit Card:</label>
                     <input id="credit_card" name="credit_card" placeholder="Credit Card  number" pattern="[0-9]{16}" title="Credit car number 16 numbers long" type="text" />
@@ -171,5 +169,4 @@
         </form>
     </div>
 </body>
-
 </html>
