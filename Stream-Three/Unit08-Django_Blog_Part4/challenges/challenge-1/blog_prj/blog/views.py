@@ -19,7 +19,7 @@ def post_details(request, id):
 	Create a view that return a single
 	Post object based on the post ID and
 	and render it to the 'postdetail.html'
-	template. Or return a 404 error if the 
+	template. Or return a 404 error if the
 	post is not found
 	"""
 	post = get_object_or_404(Post, pk=id)
@@ -36,4 +36,4 @@ def top_posts(request):
 	"""
 	posts = Post.objects.filter(published_date__lte=timezone.now()
 		).order_by('-views')[:5]
-	return render
+	return render(request, "blogposts.html", {'posts': posts})
