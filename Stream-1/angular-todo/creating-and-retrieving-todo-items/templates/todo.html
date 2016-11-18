@@ -1,0 +1,59 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td><strong>Title</strong></td>
+                <td><strong>Description</strong></td>
+                <td><strong>Status</strong></td>
+                <td><strong>Actions</strong></td>
+            </tr>
+        </thead>
+        <tr ng-repeat="todo in todos">
+            <td>{{todo.title}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.status}}</td>
+            <td>
+                <button ng-click="editTodo(id)"><span class="glyphicon glyphicon-edit"></span></button>
+                <button ng-click="deleteTodo(id)"><span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#todo-modal">Create New Todo Item</button>
+ 
+    <div class="modal fade" id="todo-modal" tabindex="-1" role="dialog" aria-labelledby="todo-form-modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="todo-form-header">Todo Item</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="todoForm" ng-submit="submitForm()" novalidate>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" name="title" class="form-control" ng-model="todo.title" required>
+                            <p ng-show="todoForm.title.$pristine" class="help-block">A title is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" name="description" class="form-control" ng-model="todo.description" required>
+                            <p ng-show="todoForm.password.$pristine" class="help-block">A description is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select class="form-control" name="status" ng-model="todo.status">
+                                <option value="Todo">Todo</option>
+                                <option value="Doing">Doing</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<form name="todoForm" ng-submit="submitForm()" novalidate>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" ng-model="todo.title" required>
+        <p ng-show="todoForm.title.$pristine" class="help-block">A title is required</p>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="description" class="form-control" ng-model="todo.description" required>
+        <p ng-show="todoForm.password.$pristine" class="help-block">A description is required</p>
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+            <select class="form-control" name="status" ng-model="todo.status">
+                <option value="Todo">Todo</option>
+                <option value="Doing">Doing</option>
+                <option value="Done">Done</option>
+            </select>
+    </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+</form>

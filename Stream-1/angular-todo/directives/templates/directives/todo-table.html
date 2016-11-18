@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td><strong>Title</strong></td>
+            <td><strong>Description</strong></td>
+            <td><strong>Status</strong></td>
+        </tr>
+    </thead>
+    <tr ng-repeat="todo in todos">
+        <td>{{todo.title}}</td>
+        <td>{{todo.description}}</td>
+        <td>{{todo.status}}</td>
+        <td>
+            <button ng-click="editTodo(todo.id)"><span class="glyphicon glyphicon-edit"></span></button>
+            <button ng-click="deleteTodo(todo.id)"><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
+    </tr>
+</table>

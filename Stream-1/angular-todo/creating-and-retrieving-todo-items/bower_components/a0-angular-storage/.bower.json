@@ -1,0 +1,41 @@
+{
+  "name": "a0-angular-storage",
+  "version": "0.0.15",
+  "authors": [
+    {
+      "name": "Martin Gontovnikas",
+      "email": "martin@gon.to"
+    }
+  ],
+  "main": [
+    "dist/angular-storage.js"
+  ],
+  "ignore": [
+    "src",
+    "test",
+    "Gruntfile.js",
+    "**/.*"
+  ],
+  "dependencies": {
+    "angular": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": ">= 1.2",
+    "angular-scenario": ">= 1.2",
+    "angular-cookies": ">= 1.2"
+  },
+  "resolutions": {
+    "angular": "1.3.3"
+  },
+  "homepage": "https://github.com/auth0/angular-storage",
+  "_release": "0.0.15",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.15",
+    "commit": "d50dfe2adb6533a3c67e1436395a84a7a70e17c3"
+  },
+  "_source": "https://github.com/auth0/angular-storage.git",
+  "_target": "^0.0.15",
+  "_originalSource": "a0-angular-storage",
+  "_direct": true
+}
