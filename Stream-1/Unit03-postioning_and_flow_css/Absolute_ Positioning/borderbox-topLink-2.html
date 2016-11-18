@@ -1,90 +1,95 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Absolute Positiong Links</title>
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-		<style type="text/css">
+    <head>
+        <meta charset="utf-8" />
+        <title>Absolute Positiong Links</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            #container {
+                margin-right: auto; /*center container with margins left & right set to auto*/
+                margin-left: auto;
+                width: 960px; /*to center an element it must have a width*/
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 0; /* for inline-block spacing issues*/
+            }
 
-			#container
-			{
-				margin-right:auto; /*center container with margins left & right set to auto*/
-				margin-left:auto;
-				width:960px;	/*to center an element it must have a width*/
-				border-radius: 10px;
-				padding: 10px;
-				font-size: 0; /* for inline-block spacing issues*/
-			}
-			.box{
-				position: relative;		/*Must be relative*/
-				width: 100%;
-				background-color: #81BBC9;
-				margin-bottom: 10px;
-				border-radius: 10px;
-				font-family: Roboto;
-				font-size: 20px;
-				text-align: center;
-				padding: 30px 0;
-			}
-			#sidebar{
-				/*add vendor prefixes for border-box*/
-				-webkit-box-sizing: border-box;
-       			-moz-box-sizing: border-box;
-            	box-sizing: border-box;
-				display: inline-block;
-				width:470px;
-				margin-right: 10px;
-				padding-left: 10px;
-				padding-right: 10px;
-			}
+            .box {
+                position: relative; /*Must be relative*/
+                width: 100%;
+                background-color: #81BBC9;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                font-family: Roboto;
+                font-size: 20px;
+                text-align: center;
+                padding: 30px 0;
+            }
+            
+            #sidebar {
+                /*add vendor prefixes for border-box*/
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                display: inline-block;
+                width: 470px;
+                margin-right: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            #content {
+                /*add vendor prefixes for border-box*/
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                display: inline-block;
+                width: 470px;
+                margin-left: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            #toTopRight {
+                position: absolute; /* Absolute Link */
+                bottom: 0; /* Offset however we wish*/
+                right: -80px;
+            }
 
-			#content{
-				/*add vendor prefixes for border-box*/
-				-webkit-box-sizing: border-box;
-       			-moz-box-sizing: border-box;
-            	box-sizing: border-box;
-				display: inline-block;
-				width:470px;
-				margin-left: 10px;
-				padding-left: 10px;
-				padding-right: 10px;
-			}
-			#toTopRight{
-				position: absolute; 	/* Absolute Link */
-				bottom:0;				/* Offset however we wish*/
-				right:-80px;
-			}
-			#toTopLeft{
-				position: absolute; 	/* Absolute Link */
-				bottom:0;				/* Offset however we wish*/
-				left:-80px;
-			}
-			p{
-				padding-bottom: 50px;
-			}
+            #toTopLeft {
+                position: absolute; /* Absolute Link */
+                bottom: 0; /* Offset however we wish*/
+                left: -80px;
+            }
 
-			
-		</style>
-	</head>
-	<body>
-		<div id="container">
-			
-			<div id="header" class="box"> <h1>Header</h1>
-			</div>
-			<div id="sidebar" class="box">
-				<h2>Sidebar</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p><a href="#" alt="Link to top"><img id="toTopLeft" src="images/arrow.png"></a>
-			
-			</div>
-			<div id="content" class="box">
-				<h2>Content</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
-				<a href="#" alt="Link to top"><img id="toTopRight" src="images/arrow.png"></a>
-			</div>
-			<div id="footer" class="box"><h2>Footer</h2>
-			</div>
+            p {
+                padding-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header" class="box">
+                <h1>Header</h1>
+            </div>
 
-		</div>
-	</body>
+            <div id="sidebar" class="box">
+                <h2>Sidebar</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+                <a href="#"><img id="toTopLeft" src="images/arrow.png" alt="Link to top"></a>            
+            </div>
+
+            <div id="content" class="box">
+                <h2>Content</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+                <a href="#"><img id="toTopRight" src="images/arrow.png" alt="Link to top"></a>
+            </div>
+
+            <div id="footer" class="box">
+                <h2>Footer</h2>
+            </div>
+        </div>
+    </body>
 </html>
