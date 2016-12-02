@@ -36,7 +36,7 @@ angular.module('RouteControllers', [])
         $scope.authToken = store.get('authToken');
         $scope.username = store.get('username');
  
-        $scope.todos = {};
+        $scope.todos = [];
  
         TodoAPIService.getTodos(URL + "todo/", $scope.username, $scope.authToken).then(function(results) {
             $scope.todos = results.data;
