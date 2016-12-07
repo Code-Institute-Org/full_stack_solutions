@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
 <head>
+<title>D3 axis</title>
+<meta charset="utf-8">
 <style>
 body {
   font: 16px sans-serif;
@@ -37,8 +38,6 @@ rect:hover {
 
 </head>
 <body>
-     
-</body>
 <script>
 //creates svg width and height variables and spacing
 var svgWidth = 700,
@@ -51,80 +50,81 @@ var margin = {top: 50, right: 0, bottom: 50, left: 50};
 //applies margin to canvas width and height
 var canvasWidth = svgWidth + margin.right + margin.left;
 var canvasHeight = svgHeight + margin.top + margin.bottom;
- 
 
 
 //creates array
 var myData = [ 10, 15, 20, 30,45, 50, 60, 70, 75, 90 ];
+
 //sorts array data
 myData.sort();
-//assigns function to a variable 
-var maxData =d3.max(myData, function(d){return d});
+
+//assigns maximum to a variable, to avoid recomputing it
+var maxData = d3.max(myData);
 
 //creates a scale for height
 var heightScale = d3.scale.linear()
                     .domain([0, maxData])
                     .range([0,svgHeight]);
-//creates a scale for the y axis			
+//creates a scale for the y axis
 var yAxisScale = d3.scale.linear()
-                    .domain([0, maxData])
-                    .range([svgHeight , 0]);
-//creates a scale for the colour scale
+                   .domain([0, maxData])
+                   .range([svgHeight , 0]);
+//creates a scale for the colours
 var colorScale = d3.scale.linear()
                    .domain([0, maxData])
                    .range(["blue","red"]);
 
 //creates a tooltip
 var tooltip = d3.select("body")
-                 .append("div")
-				 .classed("hidden",true)
-                 .attr("id","tooltip");	
+                .append("div")
+                .classed("hidden",true)
+                .attr("id","tooltip");
 
-//postions yAxis and applys ticks 	to the scale		 
+//postions yAxis and applies ticks to the scale
 var yAxis = d3.svg.axis()
               .scale(yAxisScale)
               .orient("left")
               .ticks(5);
-//creates the canvas and appends the svg to it		  
+//creates the canvas and appends the svg to it
 var canvas = d3.select("body")
-            .append("svg")
-            .attr("width",canvasWidth)
-            .attr("height",canvasHeight)
-            .attr("style","background-color:#ddd"); /* added some style*/
-		
+              .append("svg")
+              .attr("width",canvasWidth)
+              .attr("height",canvasHeight)
+              .attr("style","background-color:#ddd"); // add some style
+    
 canvas.append("g")
-  .attr("class","axis")  // style axis via CSS
-  .attr("transform","translate("+ (margin.left - 2) +"," + margin.bottom + ")")
-  .call(yAxis);
-			
+      .attr("class","axis") // style axis via CSS
+      .attr("transform","translate("+ (margin.left - 2) +"," + margin.bottom + ")")
+      .call(yAxis);
+      
 var svg = canvas.append("g")
-            .attr("width",svgWidth)
-            .attr("height",svgHeight)
-            .attr("style","background-color:#ddd") /* added some style*/
-            .attr("transform","translate("+ margin.left +"," + margin.bottom + ")");
+                .attr("width",svgWidth)
+                .attr("height",svgHeight)
+                .attr("style","background-color:#ddd") // add some style
+                .attr("transform","translate("+ margin.left +"," + margin.bottom + ")");
 
-	//create the chart		
+//create the chart
 svg.selectAll("rect")
    .data(myData)
    .enter()
-   .append("rect")  
-   .attr("x", function(d, i) {return i * (svgWidth / myData.length);})  
-   .attr("y", function(d){return svgHeight - heightScale(d);}) 
+   .append("rect")
+   .attr("x", function(d, i) {return i * (svgWidth / myData.length);})
+   .attr("y", function(d){return svgHeight - heightScale(d);})
    .attr("width", (svgWidth / myData.length) - spacing)
    .attr("height", function(d){return heightScale(d)})
    .attr("fill", function(d){return(colorScale(d));})
    .on("mouseover", function(d){    
+      d3.select("#tooltip")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 50 + "px")
+        .classed("hidden", false)
+        .html(d);
+  })
+  .on("mouseout", function(){
     d3.select("#tooltip")
-      .style("left", d3.event.pageX + "px")
-      .style("top", d3.event.pageY - 50 + "px")
-	  .classed("hidden", false)
-      tooltip.html(d);            
-	})
-	.on("mouseout", function(){    
-		d3.select("#tooltip")
-       .classed("hidden", true);            
-	});
-              
-</script>
+      .classed("hidden", true);
+  });
 
+</script>
+</body>
 </html>
