@@ -1,21 +1,29 @@
-
-//initial piece of writing
+// original profile text
 var profile = "I am a web developer developing in html css and javascript";
-var stops = ["i","am","a","and"]; //words to be removed from profile
-//splits profile 
-var words = profile.split(" ");
-//create function to assign newProfile array and push words into it
-function cleanProfile(words,stops) {
-var newProfile = [];
 
-for (i=0;i<words.length;i++){
-   if (stops.indexOf(words[i].toLowerCase()) < 0) {
-       newProfile.push(words[i])
-   }
-       
+// stop words to be removed from the profile text
+// (to avoid duplication, we only store the lower-case version)
+var stops = ["i", "am", "a", "and"];
+
+
+function cleanProfile(profile, stops) {
+    // split profile text into separate words 
+    var words = profile.split(" ");
+
+    // Instead of modifying the existing profile, we'll push the non-stop
+    // words into a new array
+    var newProfile = [];
+
+    for (var i=0; i<words.length; i++){
+        // Check if the lower-case version of the word is not in the stops 
+        if (stops.indexOf(words[i].toLowerCase()) === -1) {
+            newProfile.push(words[i])
+        }
+     }
+     return newProfile;
 }
-return newProfile;
-}
-console.log("New Profile");
-//write results of function to console 
-console.log(cleanProfile(words,stops));
+
+
+//write results to console 
+console.log("Clean profile words:");
+console.log(cleanProfile(profile, stops));
