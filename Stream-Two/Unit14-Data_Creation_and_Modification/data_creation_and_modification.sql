@@ -123,7 +123,7 @@ INSERT INTO my_db.profiles (
 /**
  * Update the address of a person in the `profiles`
  */
-UPDATE my_db.`profiles`
+UPDATE my_db.profiles
 SET address = "la New Address"
 WHERE person_id = 2;
 
