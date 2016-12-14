@@ -49,10 +49,10 @@ CREATE INDEX first_name_index ON people (first_name);
 /** 
  * Insert a new record into the `people` table
  */
-INSERT INTO `my_db`.`people` (
-	`first_name`,
-	`second_name`,
-	`DOB`
+INSERT INTO my_db.people (
+	first_name,
+	second_name,
+	DOB
 ) VALUES (
 	'John',
 	'Lennon',
@@ -69,9 +69,9 @@ SELECT * FROM my_db.people;
 /**
  * Insert a new record into the `orders` table
  */
-INSERT INTO `my_db`.`orders` (
-	`amount`,
-	`person_id`
+INSERT INTO my_db.orders (
+	amount,
+	person_id
 ) VALUES (
 	12.02,
 	1
@@ -81,9 +81,9 @@ INSERT INTO `my_db`.`orders` (
 /**
  * Insert multiple records into our `orders` table
  */
-INSERT INTO `my_db`.`orders` (
-	`amount`,
-	`person_id`
+INSERT INTO my_db.orders (
+	amount,
+	person_id
 ) VALUES
 	(12.02, 1),
 	(9.02, 1),
@@ -112,9 +112,9 @@ CREATE TABLE profiles (
  * Create a new record for our `profiles` table
  * using the person we added to our people table earlier
  */
-INSERT INTO `my_db`.`profiles` (
-	`person_id`,
-	`address`
+INSERT INTO my_db.profiles (
+	person_id,
+	address
 ) VALUES (
 	1, '742 Evergreen Terrace'
 );
@@ -123,19 +123,19 @@ INSERT INTO `my_db`.`profiles` (
 /**
  * Update the address of a person in the `profiles`
  */
-UPDATE `my_db`.`profiles`
-SET `address` = "la New Address"
-WHERE `person_id` = 2;
+UPDATE my_db.`profiles`
+SET address = "la New Address"
+WHERE person_id = 2;
 
 
 /**
  * Delete a user from our `people` table
  */
-DELETE FROM `my_db`.`profiles`
+DELETE FROM my_db.profiles
 WHERE person_id = 3;
 
-DELETE FROM `my_db`.`orders`
+DELETE FROM my_db.orders
 WHERE person_id = 3;
 
-DELETE FROM `my_db`.`people`
+DELETE FROM my_db.people
 WHERE id = 3;
