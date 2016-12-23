@@ -38,7 +38,7 @@ class MySQLDatabase(object):
 	def __del__(self):
 		"""
 		Here we'll do a check to see if `self.db` is present.
-		This will only be the case if the connection was 
+		This will only be the case if the connection was
 		successfully made in the initialiser.
 		Inside that condition we'll close the connection
 		"""
@@ -49,7 +49,7 @@ class MySQLDatabase(object):
 	def get_available_tables(self):
 		"""
 		This method will allow us to what
-		tables are available to us when we're 
+		tables are available to us when we're
 		running our queries
 		"""
 		cursor = self.db.cursor()
@@ -134,7 +134,7 @@ class MySQLDatabase(object):
 		Insert function.
 
 		Example Usage:-
-		db.insert('people', first_name='Ringo', 
+		db.insert('people', first_name='Ringo',
 				  second_name='Starr', DOB=STR_TO_DATE(
 				  						   '01-01-1999', '%d-%m-%Y'))
 		"""
@@ -147,11 +147,11 @@ class MySQLDatabase(object):
 				columns += "`%s`, " % arg
 
 				# Check how we should add this to the columns string
-				if is_number(value):
-					# It's a number so we don't add the ''
+				if is_number(value) or arg == 'DOB':
+					# It's a number or date so we don't add the ''
 					values += "%s, " % value
 				else:
-					# It's a date or a string so we add the ''
+					# It's a string so we add the ''
 					values += "'%s', " % value
 
 			columns = columns[:-2] # Strip off the spare',' from the end
@@ -197,7 +197,7 @@ class MySQLDatabase(object):
 		"""
 		Update Function.
 
-		This function will allows to 
+		This function will allows to
 		update any records in our database.
 
 		Example Usage:-
