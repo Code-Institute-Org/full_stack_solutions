@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Donations Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css//bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/introjs.css') }}">
+</head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./">School Donations Dashboard</a>
+            <a class="navbar-brand" autofocus href="#" onclick="javascript:introJs().start();">
+                Start Tour!
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="outer" class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-8">
+            <div class="row">
+
+                <!-- Time Chart -->
+                <div class="col-sm-12">
+                    <div class="chart-wrapper" data-step=" 1 " data-intro=" The description that you want"
+                         style="font-weight: normal" data-position="right">
+                        <div class="chart-title">
+                            Number of Donations
+                        </div>
+                        <div class="chart-stage">
+                            <div id="time-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Time Chart -->
+
+                <!-- Resources -->
+                <div class="col-sm-6">
+                    <div class="chart-wrapper" data-step=" 2 " data-intro=" The description that you want"
+                         style="font-weight: normal" data-position="right">
+                        <div class="chart-title">
+                            Resources Type
+                        </div>
+                        <div class="chart-stage">
+                            <div id="resource-type-row-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resources -->
+
+
+                <!-- funding Pie -->
+                <div class="col-sm-6">
+                    <div class="chart-wrapper" data-step=" 3 " data-intro=" The description that you want"
+                         style="font-weight: normal" data-position="right">
+                        <div class="chart-title">
+                            Funding Status
+                        </div>
+                        <div class="chart-stage">
+                            <div id="funding-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- funding Pie -->
+
+            </div>
+        </div>
+
+        <!-- Poverty -->
+        <div class="col-sm-3">
+            <div class="chart-wrapper" data-step=" 4 " data-intro=" The description that you want"
+                 style="font-weight: normal" data-position="right">
+                <div class="chart-title">
+                    Poverty Level
+                </div>
+                <div class="chart-stage">
+                    <div id="poverty-level-row-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Poverty -->
+
+        <!-- menu select -->
+        <div class="col-sm-6">
+            <div class="chart-wrapper" data-step=" 5 " data-intro=" The description that you want"
+                 style="font-weight: normal" data-position="right">
+                <div class="chart-title">
+                    Donation State
+                </div>
+                <div class="chart-stage">
+                    <div id="menu-select"></div>
+                </div>
+            </div>
+        </div>
+        <!-- menu select -->
+
+        <!-- Metric 1 -->
+        <div class="col-sm-2">
+            <div class="chart-wrapper" data-step=" 6 " data-intro=" The description that you want"
+                 style="font-weight: normal" data-position="right">
+                <div class="chart-title">
+                    Total Number of Donations
+                </div>
+                <div class="chart-stage" style=" background: #33CC99;
+                    /*width: 200px;*/
+                    position: relative;
+                    /*height: 60px;*/
+                    font-size: 29px;
+                    color: white;
+                    vertical-align: middle;
+                    text-align: center;
+                    padding-top: 12px;
+                    padding-bottom: 0px;">
+                    <div id="number-projects-nd"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Metric 1 -->
+
+        <!-- Metric 2 -->
+        <div class="col-sm-2">
+            <div class="chart-wrapper" data-step=" 7 " data-intro=" The description that you want"
+                 style="font-weight: normal" data-position="right">
+                <div class="chart-title">
+                    Total Donations in USD
+                </div>
+                <div class="chart-stage">
+                    <div id="total-donations-nd"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Metric 2 -->
+
+    </div>
+
+</div>
+
+<hr>
+<p class="small text-muted"> Data viz &#9829;</p>
+
+
+
+
+<script src="{{ url_for ('static',filename='lib/js/jquery.min.js') }}"></script>
+<script src="{{ url_for ('static',filename='lib/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for ('static',filename='lib/js/crossfilter.js') }}"></script>
+<script src="{{ url_for ('static',filename='lib/js/d3.js') }}"></script>
+<script src="{{ url_for ('static',filename='lib/js/dc.js') }}"></script>
+<script src="{{ url_for ('static',filename='lib/js/queue.js') }}"></script>
+
+
+<script src="{{ url_for ('static',filename='lib/js/keen.min.js') }}"></script>
+<script src="{{ url_for ('static',filename='js/graph.js') }}" type='text/javascript'></script>
+<script src="{{ url_for ('static',filename='lib/js/intro.js') }}" type="text/javascript"></script>
+</body>
+</html>
