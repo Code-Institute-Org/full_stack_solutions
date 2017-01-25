@@ -1,80 +1,77 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Border Box</title>
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-		<style type="text/css">
-
-			#container
-			{
-				margin-right:auto; /*center container with margins left & right set to auto*/
-				margin-left:auto;
-				width:960px;	/*to center an element it must have a width*/
-				border-radius: 10px;
-				padding: 10px;
-				font-size: 0; /* for inline-block spacing issues*/
-			}
-			.box{
-				display:block;
-				width: 100%;
-				background-color: #81BBC9;
-				margin-bottom: 10px;
-				border-radius: 10px;
-				font-family: Roboto;
-				font-size: 20px;
-				text-align: center;
-				padding: 30px 0;
-			}
-			#sidebar{
-				/*add vendor prefixes to make sure box-sizing works on all browserd*/
-				webkit-box-sizing: border-box;
-   				-moz-box-sizing: border-box;
-    			box-sizing: border-box;;
-				display: inline-block;
-				width:470px;
-				margin-right: 10px;
-				padding-left: 40px;/*add padding to center text using longhand method*/
-				padding-right: 40px;
-				border:solid 1px #000;/*create a black solid border of 1px*/
-			}
-			#content{
-				/*add vendor prefixes to make sure box-sizing works on all browserd*/
-				 webkit-box-sizing: border-box;
-   				-moz-box-sizing: border-box;
-    			box-sizing: border-box;;
-				display: inline-block;
-				width:470px;
-				margin-left: 10px;
-				padding-left: 40px;/*add padding to center text using longhand method*/
-				padding-right: 40px;
-				border:solid 1px #000;/*create a black solid border of 1px*/
-			}
-			p{
-				padding-bottom: 50px;
-			}
-
-			
-		</style>
-	</head>
-	<body>
-		<div id="container">
-			
-			<div id="header" class="box"> <h1>Header</h1>
-			</div>
-			<div id="sidebar" class="box">
-				<h2>Sidebar</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
-			
-			</div>
-			<div id="content" class="box">
-				<h2>Content</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
-			</div>
-			<div id="footer" class="box"><h2>Footer</h2>
-			</div>
-
+<head>
+	<meta charset="utf-8" />
+	<title>Border Box</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		#container {
+			margin-right: auto; /*center container with margins left & right set to auto*/
+			margin-left: auto;
+			width: 960px; /*to center an element it must have a width*/
+			border-radius: 10px;
+			padding: 10px;
+			font-size: 0; /* for inline-block spacing issues*/
+		}
+		.box {
+			display: block;
+			width: 100%;
+			background-color: #81BBC9;
+			margin-bottom: 10px;
+			border-radius: 10px;
+			font-family: Roboto;
+			font-size: 20px;
+			text-align: center;
+			padding: 30px 0;
+		}
+		#sidebar {
+			/*add vendor prefixes to make sure box-sizing works on all browsers*/
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display: inline-block;
+			width: 470px;
+			margin-right: 10px;
+			padding-left: 40px; /*add padding to center text using longhand method*/
+			padding-right: 40px;
+			border: solid 1px #000;/*create a black solid border of 1px*/
+			vertical-align: top; /* force alignment at top rather than baseline*/
+		}
+		#content {
+			/*add vendor prefixes to make sure box-sizing works on all browsers*/
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;;
+			display: inline-block;
+			width: 470px;
+			margin-left: 10px;
+			padding-left: 40px; /*add padding to center text using longhand method*/
+			padding-right: 40px;
+			border: solid 1px #000;/*create a black solid border of 1px*/
+		}
+		p {
+			padding-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header" class="box">
+			<h1>Header</h1>
 		</div>
-	</body>
+		<div id="sidebar" class="box">
+			<h2>Sidebar</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+		</div>
+		<div id="content" class="box">
+			<h2>Content</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+		</div>
+		<div id="footer" class="box">
+			<h2>Footer</h2>
+		</div>
+	</div>
+</body>
 </html>
