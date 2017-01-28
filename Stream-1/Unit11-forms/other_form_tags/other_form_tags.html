@@ -1,93 +1,83 @@
 <!DOCTYPE html>
 <html>
-   <head>
-   <meta charset="UTF-8">
-      <title>Other Form Tags</title>
-      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-   
-      <!--
-         Form with HTML5 tags and basic CSS
-      -->
-      <style type="text/css">
+<head>
+    <meta charset="UTF-8">
+    <title>Other Form Tags</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!--
+    Form with HTML5 tags and basic CSS
+    -->
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
 
-      body{
-         font-family: 'Roboto', sans-serif;
-      }
-         #container{
+        #container {
             width: 550px;
             margin: auto;
+        }
 
-         }
-
-         legend{
+        legend {
             font-size: 30px;
             background-color: #fff;
             border-radius: 5px;
             border: 1px solid #999;
             padding: 4px 15px;
-         }
-            
-         label.field{
+        }
+
+        label.field {
             display: block;
             text-align: right;
             width: 100px;
             float: left;
+            clear: both;
+        }
 
-         }
-         input{
-            width: 200px;
+        input {
             border-radius: 5px;
             padding: 6px 8px;
-         }
-         .field{
+            float: left;
+        }
+
+        .field {
             padding: 6px 8px;
-         }
+        }
 
-         #currency{
-             width: 220px;
-             border-radius: 5px;
-             padding: 6px 8px;
-         }
-
-         fieldset{
+        fieldset {
             width: 450px;
             border: 1px solid #999;
             border-radius: 20px;
-            clear: both;
             padding: 20px;
             margin-bottom: 100px;
             background-color:rgba(129, 187, 201,.2);
-
-         }
-      </style>
-   </head>
-   <body>
-      <div id="container">
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form>
             <fieldset>
-                <form>
-                  <legend>Registration</legend>
-                     <label for="fname" class="field"> Username:</label>  
-                     <input type="text" id="fname" placeholder="required field" name="fname"/>
+                <legend>Registration</legend>
 
-                     <label for="password" class ="field">Password:</label>
-                     <input id="password" name="password" placeholder="enter password"type="password" />
+                <label for="fname" class="field">Username:</label>
+                <input type="text" id="fname" placeholder="required field" name="fname"/>
 
-                     <label for="email" class ="field">Email::</label>
-                     <input id="email" name="email"  placeholder="enter email" type="email" />
+                <label for="password" class ="field">Password:</label>
+                <input id="password" name="password" placeholder="enter password" type="password" />
 
-                     <label for="telephone" class ="field">Telephone::</label>
-                     <input id="telephone" name="telephone" placeholder="digits only" type="number" />
+                <label for="email" class ="field">Email:</label>
+                <input id="email" name="email"  placeholder="enter email" type="email" />
 
-                    
+                <label for="telephone" class ="field">Telephone:</label>
+                <input id="telephone" name="telephone" placeholder="digits only" type="number" />
 
-                     <label for="website" class ="field">Website:</label>
-                     <input id="website" name="website" placeholder="enter full url" type="url" />
+                <label for="website" class ="field">Website:</label>
+                <input id="website" name="website" placeholder="enter full url" type="url" />
 
-                     <label for ="submit" class="field">Submit</label>
-                     <input type="submit" value="submit"/>
-            </form> 
+                <label for="submit" class="field">Submit</label>
+                <input id="submit" type="submit" value="submit"/>
             </fieldset>
+        </form>
     </div>
-   </body>
-
+</body>
 </html>
