@@ -135,8 +135,8 @@ class MySQLDatabase(object):
 
 		Example Usage:-
 		db.insert('people', first_name='Ringo',
-				  second_name='Starr', DOB=STR_TO_DATE(
-				  						   '01-01-1999', '%d-%m-%Y'))
+				  second_name='Starr', DOB='STR_TO_DATE(
+											"01-01-1999", "%d-%m-%Y")')
 		"""
 		sql_str = "INSERT INTO `%s`.`%s` " % (self.database_name, table)
 
@@ -197,7 +197,7 @@ class MySQLDatabase(object):
 		"""
 		Update Function.
 
-		This function will allows to
+		This function allows us to
 		update any records in our database.
 
 		Example Usage:-
