@@ -12,7 +12,7 @@ angular.module('RouteControllers', [])
                 store.set('username', $scope.registrationUser.username);
                 store.set('authToken', $scope.token);
             }).catch(function(err) {
-                console.log(err.data);
+                console.log(err);
             });
         }
 
@@ -26,7 +26,8 @@ angular.module('RouteControllers', [])
                     alert("You have successfully registered to Angular Todo");
                     $scope.login();
                 }).catch(function(err) {
-                    alert("Oops! Something went wrong!");
+                    console.log(err);
+                    alert("Registration failed, please try again with another username.");
                 });
             }
         };

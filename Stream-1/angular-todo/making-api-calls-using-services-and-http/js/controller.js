@@ -16,7 +16,8 @@ angular.module('RouteControllers', [])
                     $scope.data = results.data;
                     alert("You have successfully registered to Angular Todo");
                 }).catch(function(err) {
-                    alert("Oops! Something went wrong!");
+                    console.log(err);
+                    alert("Registration failed, please try again with another username.");
                 });
             }
         };
