@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 Video</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+    body {
+        background-color: #000;
+        font-family: roboto;
+    }
+
+    h1, h2 {
+        width: 600px;
+        margin: 0px auto;
+        color: #fff
+    }
+    video {
+        display: block;
+        margin: 50px auto;
+        /*filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -webkit-filter: hue-rotate(270deg);
+        -webkit-filter: invert(1); */
+        /* http://html5-demos.appspot.com/static/css/filters/index.html*/
+    }
+    </style>
+</head>
+<body>
+    <h1>HTML5 - Video</h1>
+    <video width ="600" controls="controls" preload="auto" muted loop poster="images/jazzcat.png">
+        <!-- If the browser can't play WEBM try OGV then MP4 -->
+        <source src="video/WEBM_Bunny.webm" type="video/webm"/>
+        <source src="video/OGV_Bunny.ogv" type="video/ogg" />
+        <source src="video/MP4_Bunny.mp4" type="video/mp4"/>
+        <track src="video/sub.vtt" label="English subtitles" kind="subtitles" srclang="en" default>
+    </video>
+
+    <h2>The same video, but with media fragments to start at 45s and end at 55s (and without the loop):</h2>
+    <video width ="600" controls="controls" preload="auto" muted poster="images/jazzcat.png">
+        <!-- If the browser can't play WEBM try OGV then MP4 -->
+        <source src="video/WEBM_Bunny.webm#t=45,55" type="video/webm"/>
+        <source src="video/OGV_Bunny.ogv#t=45,55" type="video/ogg" />
+        <source src="video/MP4_Bunny.mp4#t=45,55" type="video/mp4"/>
+        <track src="video/sub.vtt" label="English subtitles" kind="subtitles" srclang="en" default>
+    </video>
+</body>
+</html>
