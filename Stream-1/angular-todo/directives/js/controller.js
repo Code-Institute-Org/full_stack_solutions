@@ -64,7 +64,7 @@ angular.module('RouteControllers', [])
         };
 
         $scope.deleteTodo = function(id) {
-            TodoAPIService.deleteTodo(url + "todo/" + id, $scope.username, $scope.authToken).then(function(results) {
+            TodoAPIService.deleteTodo(URL + "todo/" + id, $scope.username, $scope.authToken).then(function(results) {
                 console.log(results);
             }).catch(function(err) {
                 console.log(err);
