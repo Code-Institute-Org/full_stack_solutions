@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 class AccountUserManager(UserManager):
     def _create_user(self, username, email, password,
