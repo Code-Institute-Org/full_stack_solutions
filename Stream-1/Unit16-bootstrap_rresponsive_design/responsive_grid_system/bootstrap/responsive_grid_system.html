@@ -1,174 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width">
-  <title>Bootstrap Responsive Grid</title>
-  		 <!--add bootstrap css files here-->
-  		<link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css' />
-  		<!--add overriding css file here afeter bootstrap css-->
-  		<link rel='stylesheet' type='text/css' href='css/style.css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bootstrap Responsive Grid</title>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+
+    <style>
+        footer {
+            padding-top: 5px;
+            background-color: #eee;
+            text-align: center;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
-	<!--change nav color-->
-	<nav class="navbar navbar-inverse">		
-		<div class='container'>
-		    <div class="nav navbar-header">
-		    	<a class="navbar-brand" href="#">CHOCOBLOCK</a>
-		    	<!--add button and set class navbar-toggle and collasped to create menu-->
-		    	<button type="button" class="navbar-toggle collasped" 
-		    		data-toggle="collapse" 
-		    		data-target="#myCollapsingList">
-		    		<!--creates collasped menu icon appearence-->
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			    </button>
-		    </div>	<!--add id to link to button -->    
-		    <ul id="myCollapsingList" class="nav navbar-nav 
-									         collapse navbar-collapse">
-				 <li><a href="#">Home</a></li>
-			     <li><a href="#">About</a></li>
-			     <li><a href="#">Portfolio</a></li>
-			     <li><a href="#">Blog</a></li>
-			     <li><a href="#">Contact</a></li>
-			</ul>
-		</div>
-	</nav>
-	<div class ="container">
-		<!--adds a jumbotron-->
-	<div class="jumbotron">
-   <div class="container">
-     <h1>My Jumbotron!!!</h1>
-     <p>A lightweight, flexible component... </p>
-     <p><a class="btn btn-primary btn-lg" href="#">Learn more</a></p>
-   </div>
-</div>
-</div>
- 
-<div class='container'>
-	
+    <!--change nav color-->
+    <nav class="navbar navbar-inverse">
+        <div class='container'>
+            <div class="nav navbar-header">
+                <a class="navbar-brand" href="#">CHOCOBLOCK</a>
+                <!--add button and set class navbar-toggle and collapsed to create menu-->
+                <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#myCollapsingList">
+                    <!--creates collapsed menu icon appearance-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!--the id here is used to link to the button -->
+            <ul id="myCollapsingList"
+                class="nav navbar-nav collapsed navbar-collapse">
+                 <li><a href="#">Home</a></li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Portfolio</a></li>
+                 <li><a href="#">Blog</a></li>
+                 <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class ="container">
+        <!--adds a jumbotron-->
+        <div class="jumbotron">
+            <div class="container">
+                <h1>My Jumbotron!!!</h1>
+                <p>A lightweight, flexible component... </p>
+                <p><a class="btn btn-primary btn-lg" href="#">Learn more</a></p>
+            </div>
+        </div>
+    </div>
 
-	<div class='row'> 
-		<div class='col-md-4'>
-			<h1>HTML</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<a href="#" class="btn btn-success">Learn</a>
-		</div>
-		<div class='col-md-4'>
-			<h1>CSS</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<a href="#" class="btn btn-primary">Learn</a>
-		</div>
-		<div class='col-md-4'>
-			<h1>Bootstrap</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<a href="#" class="btn btn-danger">Learn</a>
-		</div>
-	</div>
-	<hr/>
-	<div class='row'>
-		<div class='col-md-3 col-sm-6'>
-			<h1>Python</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-		<div class='col-md-3 col-sm-6'>
-			<h1>Django</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-		<div class='col-md-3 col-sm-6'>
-			<h1>Javascript</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-		<div class='col-md-3 col-sm-6'>
-			<h1>Github</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-	</div>
-	<hr>
-	<div class='row'>
-		<div class='col-md-6'>
-			<h1>SQL</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-		<div class='col-md-6'>
-			<h1>FTP</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-		
-	</div>
-	<footer class="col-12">
-      <h2>Footer</h2>
-      <p>Copyright</p>
-	</footer>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-4'>
+                <h1>HTML</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#" class="btn btn-success">Learn</a>
+            </div>
+            <div class='col-md-4'>
+                <h1>CSS</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#" class="btn btn-primary">Learn</a>
+            </div>
+            <div class='col-md-4'>
+                <h1>Bootstrap</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#" class="btn btn-danger">Learn</a>
+            </div>
+        </div>
+        <hr>
+        <div class='row'>
+            <div class='col-md-3 col-sm-6'>
+                <h1>Python</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class='col-md-3 col-sm-6'>
+                <h1>Django</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class='col-md-3 col-sm-6'>
+                <h1>Javascript</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class='col-md-3 col-sm-6'>
+                <h1>Github</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h1>SQL</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class='col-md-6'>
+                <h1>FTP</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
 
-</div>
-<!--add semantic footer-->
-<style>
-footer{
-          padding-top: 5px;
-          background-color: #eee;
-          text-align: center;
-          height: 100px;
-     }
+        <footer class="col-12">
+          <h2>Footer</h2>
+          <p>Copyright</p>
+        </footer>
+    </div>
 
-</style>
+    <!--add bootstrap css here-->
+    <script src='http://code.jquery.com/jquery.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
 </body>
-<!--add bootstrap css here-->
-<script src='http://code.jquery.com/jquery.min.js'></script>
-<script src='bootstrap/js/bootstrap.min.js'></script>
 </html>
