@@ -46,7 +46,7 @@ class UserRegistrationForm(UserCreationForm):
         """
         instance = super(UserRegistrationForm, self).save(commit=False)
 
-        # Automatically set to email address to create a unique identifier as th field cannot be left empty on save.
+        # Automatically set to email address to create a unique identifier as the field cannot be left empty on save.
         instance.username = instance.email
 
         if commit:
