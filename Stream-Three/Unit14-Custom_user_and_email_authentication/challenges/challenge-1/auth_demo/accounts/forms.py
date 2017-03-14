@@ -5,6 +5,9 @@ from django.core.exceptions import ValidationError
 
 
 class UserRegistrationForm(UserCreationForm):
+    """
+    Creates a User Creation Form
+    """
     password1 = forms.CharField(
         label='Password',
         widget=forms.PasswordInput
@@ -16,11 +19,18 @@ class UserRegistrationForm(UserCreationForm):
     )
 
     class Meta:
+        """
+        As we don't want to display all fields we use a Meta class to include and exclude fields.
+        """
         model = User
         fields = ['email', 'password1', 'password2']
         exclude = ['username']
 
     def clean_password2(self):
+        """
+        This custom method cleans the data and checks it's validity.
+        :return:
+        """
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
 
@@ -31,9 +41,12 @@ class UserRegistrationForm(UserCreationForm):
         return password2
 
     def save(self, commit=True):
+        """
+        Overrides the default save method.
+        """
         instance = super(UserRegistrationForm, self).save(commit=False)
 
-        # automatically set to email address to create a unique identifier
+        # Automatically set to email address to create a unique identifier as th field cannot be left empty on save.
         instance.username = instance.email
 
         if commit:
@@ -43,5 +56,8 @@ class UserRegistrationForm(UserCreationForm):
 
 
 class UserLoginForm(forms.Form):
+    """
+    Creates a login form.
+    """
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)

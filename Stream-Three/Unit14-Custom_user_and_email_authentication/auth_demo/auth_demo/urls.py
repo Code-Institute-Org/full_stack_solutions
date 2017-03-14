@@ -26,3 +26,5 @@ urlpatterns = [
     url(r'^login/$', accounts_views.login, name='login'),
     url(r'^logout/$', accounts_views.logout, name='logout'),
 ]
+
+# The name='' allows the url to be referred to in html and views by name
