@@ -11,20 +11,19 @@ class TodoView(APIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = TodoSerializer
 
-    def get(self, request, pk):
-        if "username" in request.query_params:
-
-            if pk is not None:
-                todo = Todo.objects.get(id=pk)
-                serializer = TodoSerializer(todo)
-            else:
-                user = User.objects.get(
-                    username=request.query_params["username"])
-                todos = Todo.objects.filter(user=user)
-                serializer = TodoSerializer(todos, many=True)
-            return Response(serializer.data)
-        else:
+    def get(self, request, pk=None):
+        if "username" not in request.query_params:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+        if pk is None:
+            user = User.objects.get(username=request.query_params["username"])
+            todos = Todo.objects.filter(user=user)
+            serializer = TodoSerializer(todos, many=True)
+        else:
+            todo = Todo.objects.get(id=pk)
+            serializer = TodoSerializer(todo)
+
+        return Response(serializer.data)
 
     def post(self, request):
         serializer = TodoSerializer(data=request.data)
@@ -37,8 +36,7 @@ class TodoView(APIView):
         user = User.objects.get(username=data["username"])
 
         Todo.objects.create(user=user, title=data["title"],
-                            description=data["description"],
-                            status=data["status"])
+                            description=data["description"], status=data["status"])
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -48,6 +46,7 @@ class TodoView(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
+
 
         return Response(serializer.data)
 

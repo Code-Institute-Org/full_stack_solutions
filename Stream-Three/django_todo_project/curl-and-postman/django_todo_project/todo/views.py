@@ -9,13 +9,14 @@ class TodoView(APIView):
 
     serializer_class = TodoSerializer
 
-    def get(self, request, pk):
-        if pk is not None:
-            todo = Todo.objects.get(id=pk)
-            serializer = TodoSerializer(todo)
-        else:
+    def get(self, request, pk=None):
+        if pk is None:
             todos = Todo.objects.all()
             serializer = TodoSerializer(todos, many=True)
+        else:
+            todo = Todo.objects.get(id=pk)
+            serializer = TodoSerializer(todo)
+
         return Response(serializer.data)
 
     def post(self, request):
