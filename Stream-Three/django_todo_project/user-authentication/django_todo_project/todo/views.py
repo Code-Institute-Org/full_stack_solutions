@@ -36,7 +36,8 @@ class TodoView(APIView):
         user = User.objects.get(username=data["username"])
 
         Todo.objects.create(user=user, title=data["title"],
-                            description=data["description"], status=data["status"])
+                            description=data["description"],
+                            status=data["status"])
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -46,7 +47,6 @@ class TodoView(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
-
 
         return Response(serializer.data)
 
