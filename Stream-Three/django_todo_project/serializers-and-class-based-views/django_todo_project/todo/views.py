@@ -7,9 +7,9 @@ from .models import Todo
 
 class TodoView(APIView):
 
-	serializer_class = TodoSerializer
+    serializer_class = TodoSerializer
 
-	def get(self, request):
-		todos = Todo.objects.all()
-		serializer = TodoSerializer(todos, many=True)
-		return Response(serializer.data)
+    def get(self, request):
+        todos = Todo.objects.all()
+        serializer = TodoSerializer(todos, many=True)
+        return Response(serializer.data)

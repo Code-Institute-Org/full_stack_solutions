@@ -7,19 +7,19 @@ from .serializers import RegistrationSerializer
 
 class RegistrationView(APIView):
 
-	serializer_class = RegistrationSerializer
+    serializer_class = RegistrationSerializer
 
-	def post(self, request):
-		serializers = RegistrationSerialier(data=request.data)
+    def post(self, request):
+        serializers = RegistrationSerialier(data=request.data)
 
-		if not serializer.is_valid():
-			return Response(serializer.errors,
-							status=status.HTTP_400_BAD_REQUEST)
+        if not serializer.is_valid():
+            return Response(serializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
 
-		data = serializer.data
+        data = serializer.data
 
-		user = User.objects.create(username=data['username'])
-		user.set_password(data['password'])
-		user.save()
+        user = User.objects.create(username=data['username'])
+        user.set_password(data['password'])
+        user.save()
 
-		return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
