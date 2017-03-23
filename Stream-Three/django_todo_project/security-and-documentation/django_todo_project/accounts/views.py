@@ -10,7 +10,7 @@ class RegistrationView(APIView):
     serializer_class = RegistrationSerializer
 
     def post(self, request):
-        serializers = RegistrationSerializer(data=request.data)
+        serializer = RegistrationSerializer(data=request.data)
 
         if not serializer.is_valid():
             return Response(serializer.errors,
