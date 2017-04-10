@@ -20,7 +20,8 @@ def draw_cells():
         pygame.draw.rect(screen, colour, rectangle)
 
 
-def get_neighbours((x, y)):
+def get_neighbours(point):
+    x, y = point
     positions = [(x - 1, y - 1), (x, y - 1), (x + 1, y - 1), (x + 1, y),
                  (x + 1, y + 1), (x, y + 1), (x - 1, y + 1), (x - 1, y)]
     return [cells[r, c] for (r, c) in positions if 0 <= r < rows and 0 <= c < columns]
