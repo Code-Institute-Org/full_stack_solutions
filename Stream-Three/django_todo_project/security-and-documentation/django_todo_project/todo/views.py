@@ -8,49 +8,49 @@ from .models import Todo
 
 class TodoView(APIView):
 
-	permission_classes = (IsAuthenticated,)
-	serializer_class = TodoSerializer
+    permission_classes = (IsAuthenticated,)
+    serializer_class = TodoSerializer
 
-	def get(self, request, pk):
-		if "username" in request.query_params:
+    def get(self, request, pk=None):
+        if "username" not in request.query_params:
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
-			if pk is not None:
-				todo = Todo.objects.get(id=pk)
-				serializer = TodoSerializer(todo)
-			else:
-				user = User.objects.get(username=request.query_params["username"])
-				todos = Todo.objects.filter(user=user)
-				serializer = TodoSerializer(todos, many=True)
-			return Response(serializer.data)
-		else:
-			return Response(status=status.HTTP_404_NOT_FOUND)
+        if pk is None:
+            user = User.objects.get(username=request.query_params["username"])
+            todos = Todo.objects.filter(user=user)
+            serializer = TodoSerializer(todos, many=True)
+        else:
+            todo = Todo.objects.get(id=pk)
+            serializer = TodoSerializer(todo)
 
-	def post(self, request):
-		serializer = TodoSerializer(data=request.data)
-		if not serializer.is_valid():
-			return Response(serializer.errors,
-							status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.data)
 
-		data = serializer.data
+    def post(self, request):
+        serializer = TodoSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
 
-		user = User.objects.get(username=data["username"])
+        data = serializer.data
 
-		Todo.objects.create(user=user, title=data["title"],
-							description=data["description"], status=data["status"])
+        user = User.objects.get(username=data["username"])
 
-		return Response(serializer.data, status=status.HTTP_201_CREATED)
+        Todo.objects.create(user=user, title=data["title"],
+                            description=data["description"],
+                            status=data["status"])
 
-	def put(self, request, pk):
-		todo = Todo.objects.get(id=pk)
-		serializer = TodoSerializer(todo, data=request.data)
-		if not serializer.is_valid():
-			return Response(serializer.errors,
-							status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-		
-		return Response(serializer.data)
+    def put(self, request, pk):
+        todo = Todo.objects.get(id=pk)
+        serializer = TodoSerializer(todo, data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
 
-	def delete(self, request, pk):
-		todo = Todo.objects.get(id=pk)
-		todo.delete()
-		return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.data)
+
+    def delete(self, request, pk):
+        todo = Todo.objects.get(id=pk)
+        todo.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
