@@ -4,12 +4,14 @@ from vending_machine import give_change
 
 class TestVendingMachine(unittest.TestCase):
     """
-    Define a class that inherits from unittest which is the unit testing model that ships with Python.
+    Define a class that inherits from unittest which is the unit
+    testing model that ships with Python.
     """
 
     def test_return_change(self):
         """
-        Method name has to start with test_ in order for it to run. The assertEqual method is inherited from unittest.
+        Method name has to start with test_ in order for it to run.
+        The assertEqual method is inherited from unittest.
         :return:
         """
         coins = give_change(17)

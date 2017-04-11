@@ -11,7 +11,9 @@ while True:
     # generate the random number between 0 and RANGE (RANGE=10)
     random_number = random.randint(RANGE_BOTTOM, RANGE_TOP)
 
-    # raw_input in a for loop gives the user a certain amount of guesses (10 in this case)
+    """ raw_input in a for loop gives the user a certain amount
+    of guesses (10 in this case)
+    """
     for i in range(NUMBER_OF_GUESSES):
         guess = int(raw_input('guess the number: '))
         if guess == random_number:
