@@ -12,11 +12,10 @@ class TestVendingMachine(unittest.TestCase):
         """
         Method name has to start with test_ in order for it to run.
         The assertEqual method is inherited from unittest.
-        :return:
         """
         self.assertEqual(give_change(.17), [.10, .05, .02])
         self.assertEqual(give_change(.18), [.10, .05, .02, .01])
         self.assertEqual(give_change(.04), [.02, .02])
 
     def test_multiple_same_coins(self):
-        self.assertEqual(give_change(4), [2, 2])
+        self.assertEqual(give_change(.04), [.02, .02])
