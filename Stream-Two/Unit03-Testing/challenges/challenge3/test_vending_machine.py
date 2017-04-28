@@ -23,10 +23,11 @@ class TestVendingMachine(unittest.TestCase):
         self.assertEqual(give_change(.40), [.20, .20])
 
     def test_unavailable_item(self):
-        """if user asks for an item that's unavailable, they should not be given the item,
-        and their money should be returned. The use of the _ is a convention to denote a
-        throwaway variable name that is being deliberately ignored.
+        """if user asks for an item that's unavailable,
+        they should not be given the item and their money should be returned.
         """
+        # The use of the _ is a convention to denote a throwaway
+        # variable name that is being deliberately ignored.
         item, change, _ = give_item_and_change('crisps', .50)
         self.assertIsNone(item)
         self.assertEqual(change, .50)
