@@ -24,7 +24,7 @@ class Todo(models.Model):
     user = models.ForeignKey(User, default=1)
     title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=255, null=False)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES, null=False)
+    status = models.CharField(max_length=5, choices=STATUS_CHOICES, null=False)
     updated = models.DateTimeField(default=timezone.now)
 
     def __unicode__(self):
