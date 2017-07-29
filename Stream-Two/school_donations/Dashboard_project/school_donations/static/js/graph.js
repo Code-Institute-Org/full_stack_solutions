@@ -2,10 +2,9 @@ queue()
     .defer(d3.json, "/donorsUS/projects")
     .await(makeGraphs);
 
-function makeGraphs(error, projectsJson) {
+function makeGraphs(error, donorsUSProjects) {
 
-    //Clean projectsJson data
-    var donorsUSProjects = projectsJson;
+    //Clean donorsUSProjects data
     var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
     donorsUSProjects.forEach(function (d) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
