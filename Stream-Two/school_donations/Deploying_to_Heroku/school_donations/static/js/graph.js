@@ -3,6 +3,10 @@ queue()
     .await(makeGraphs);
 
 function makeGraphs(error, donorsUSProjects) {
+    if (error) {
+        console.error("makeGraphs error on receiving dataset:", error.statusText);
+        throw error;
+    }
 
     //Clean donorsUSProjects data
     var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
