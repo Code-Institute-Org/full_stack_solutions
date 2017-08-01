@@ -16,6 +16,7 @@ function makeGraphs(error, donorsUSProjects) {
         d["total_donations"] = +d["total_donations"];
     });
 
+
     //Create a Crossfilter instance
     var ndx = crossfilter(donorsUSProjects);
 
@@ -32,10 +33,6 @@ function makeGraphs(error, donorsUSProjects) {
     var stateDim = ndx.dimension(function (d) {
         return d["school_state"];
     });
-    var totalDonationsDim = ndx.dimension(function (d) {
-        return d["total_donations"];
-    });
-
     var fundingStatus = ndx.dimension(function (d) {
         return d["funding_status"];
     });
@@ -57,8 +54,6 @@ function makeGraphs(error, donorsUSProjects) {
         return d["total_donations"];
     });
 
-    var max_state = totalDonationsByState.top(1)[0].value;
-
     //Define values (to be used in charts)
     var minDate = dateDim.bottom(1)[0]["date_posted"];
     var maxDate = dateDim.top(1)[0]["date_posted"];
@@ -70,9 +65,10 @@ function makeGraphs(error, donorsUSProjects) {
     var numberProjectsND = dc.numberDisplay("#number-projects-nd");
     var totalDonationsND = dc.numberDisplay("#total-donations-nd");
     var fundingStatusChart = dc.pieChart("#funding-chart");
+    var selectField = dc.selectMenu('#menu-select');
 
 
-    selectField = dc.selectMenu('#menu-select')
+    selectField
         .dimension(stateDim)
         .group(stateGroup);
 
@@ -133,5 +129,4 @@ function makeGraphs(error, donorsUSProjects) {
 
 
     dc.renderAll();
-
 }
