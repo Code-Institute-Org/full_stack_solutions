@@ -17,12 +17,12 @@ CREATE TABLE articles (
  * Insert some data into our newly created `articles` table
  */
 INSERT INTO articles (
-	`titles`,
+	`title`,
 	`content`,
 	`person_id`
 ) VALUES
 	('article 1', 'some text', 1),
-	('article 2', 'some more text' 1),
+	('article 2', 'some more text', 1),
 	('article 3', 'even more text', 1),
 	('article 4', 'wow so much text', 1);
 
