@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 
 class TodoView(APIView):
     """
-    TodoView used to handle the incoming requests relating to 
+    TodoView used to handle the incoming requests relating to
     `todo` items
     """
 
@@ -23,7 +23,7 @@ class TodoView(APIView):
 
         Gets `username` from the `query_params` in order to retrieve the
         `todo` items belonging to that user, then checks to see if a primary key has been provided by the URL.
-        If not, a full list of `todo` will be retrieved. If a primary key 
+        If not, a full list of `todo` will be retrieved. If a primary key
         has been provided then only that instance will be retrieved.
 
         If no username was found in the `query_params` then a 404 (not found)
@@ -76,12 +76,16 @@ class TodoView(APIView):
             return Response(serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
         else:
+            # Get the `user` based on the request data (not in the serializer)
+            user = User.objects.get(username=request.data["username"])
+
+            # Get the todo item data from the serializer
             data = serializer.data
-            # Get the `user` based on the username contained in the `data`
-            user = User.objects.get(username=data["username"])
             # Create the new `todo` item
-            Todo.objects.create(user=user, title=data["title"],
-                                description=data["description"], status=data["status"])
+            Todo.objects.create(user=user,
+                                title=data["title"],
+                                description=data["description"],
+                                status=data["status"])
             return Response(serializer.data,
                             status=status.HTTP_201_CREATED)
 
@@ -109,7 +113,7 @@ class TodoView(APIView):
         else:
             serializer.save()
             return Response(serializer.data)
-    
+
     def delete(self, request, pk):
         """
         Handle DELETE request for the `/todo/` endpoint.
