@@ -12,6 +12,8 @@ class UserView(APIView):
     UserView handles the requests made to `/accounts/`
     """
 
+    permission_classes = ()
+
     def post(self, request):
         """
         Handles the POST request made to the `/accounts/` URL.
@@ -23,7 +25,7 @@ class UserView(APIView):
         created, otherwise returns a 400 (bad request)
         """
         serializer = UserSerializer(data=request.data)
-        
+
         # Check to see if the data in the `request` is valid.
         # If the cannot be deserialized into a Todo object then
         # a bad request respose will be returned.
@@ -34,7 +36,7 @@ class UserView(APIView):
                             status=status.HTTP_400_BAD_REQUEST)
         else:
             data = serializer.data
-            # Create a new user using the `username` contained in 
+            # Create a new user using the `username` contained in
             # the `data` dict
             user = User.objects.create(username=data["username"])
             # Use the `set_password` method to create a hashed password
