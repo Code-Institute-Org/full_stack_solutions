@@ -8,11 +8,11 @@ our database so we can instantiate our
 MySQLDatabase object
 """
 db = MySQLDatabase(db_config.get('db_name'),
-				   db_config.get('user'),
-				   db_config.get('pass'),
-				   db_config.get('host'))
+                   db_config.get('user'),
+                   db_config.get('pass'),
+                   db_config.get('host'))
 
-# Get all the available columns for our 
+# Get all the available columns for our
 # profiles table and print them out
 columns = db.get_columns_for_table('profiles')
 print columns

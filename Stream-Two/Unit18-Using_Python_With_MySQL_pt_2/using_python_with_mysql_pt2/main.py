@@ -8,16 +8,16 @@ our database so we can instantiate our
 MySQLDatabase object
 """
 db = MySQLDatabase(db_config.get('db_name'),
-				   db_config.get('user'),
-				   db_config.get('pass'),
-				   db_config.get('host'))
+                   db_config.get('user'),
+                   db_config.get('pass'),
+                   db_config.get('host'))
 
-# Get all the available tables for 
+# Get all the available tables for
 # our database annd print them out.
 tables = db.get_available_tables()
 print tables
 
-# Get all the available columns for our 
+# Get all the available columns for our
 # articles table and print them out
 columns = db.get_columns_for_table('people')
 print columns
@@ -35,14 +35,14 @@ print "Column specific records: %s" % str(column_specific_records)
 
 # Select data using the WHERE clause
 where_expression_records = db.select('people', ['first_name'],
-									 where="first_name='John'")
+                                     where="first_name='John'")
 print "Where Records: %s" % str(where_expression_records)
 
-# Select data using the WHERE clause and 
+# Select data using the WHERE clause and
 # the JOIN clause
-joined_records = db.select('people', ['first_name'], 
-						   where="people.id=3",
-						   join="orders ON people.id=orders.person_id")
+joined_records = db.select('people', ['first_name'],
+                           where="people.id=3",
+                           join="orders ON people.id=orders.person_id")
 print "Joined records: %s" % str(joined_records)
 
 # Delete a record from the database
