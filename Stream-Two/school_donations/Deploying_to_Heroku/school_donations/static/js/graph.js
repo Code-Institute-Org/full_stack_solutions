@@ -43,9 +43,6 @@ function makeGraphs(error, donorsUSProjects) {
     var numProjectsByResourceType = resourceTypeDim.group();
     var numProjectsByPovertyLevel = povertyLevelDim.group();
     var numProjectsByFundingStatus = fundingStatus.group();
-    var totalDonationsByState = stateDim.group().reduceSum(function (d) {
-        return d["total_donations"];
-    });
     var stateGroup = stateDim.group();
 
 
