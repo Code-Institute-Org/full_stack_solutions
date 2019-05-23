@@ -1,7 +1,7 @@
 appdirs~=1.4.3
 Django~=1.11.19
 django-cors-headers~=2.0.2
-djangorestframework~=3.6.2
+djangorestframework~=3.9.1
 djangorestframework-jwt~=1.8.0
 drfdocs~=0.0.11
 packaging~=16.8
