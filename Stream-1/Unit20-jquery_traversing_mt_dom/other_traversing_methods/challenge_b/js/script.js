@@ -5,7 +5,7 @@
       adds the selection class to this table headers row only*/
      $("th").click(function(){
      	$("tr").children().removeClass("selection")
-    	$(this).siblings().addClass("selection");
+    	$(this).siblings('td').addClass("selection");
 
   });
  });
